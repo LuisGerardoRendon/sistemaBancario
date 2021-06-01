@@ -27,10 +27,9 @@ var
   Form4: TForm4;
 
 implementation
-
 {$R *.dfm}
 
-uses DataAccesModule;
+uses DataAccesModule, MenuCliente;
 
 procedure TForm4.loginClick(Sender: TObject);
 begin
@@ -48,6 +47,11 @@ begin
     end;
     txtCorreoElectronico.Text:= 'Consultado';
     txtNombre.Text := nombre;
+    if (nombre.Equals('')) then
+    begin
+      Form1.ShowModal;
+      Form4.CloseModal;
+    end;
 
     
     
