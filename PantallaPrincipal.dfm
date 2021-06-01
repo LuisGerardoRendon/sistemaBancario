@@ -2,8 +2,8 @@ object Form4: TForm4
   Left = 0
   Top = 0
   Caption = 'Form4'
-  ClientHeight = 299
-  ClientWidth = 635
+  ClientHeight = 350
+  ClientWidth = 400
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,36 +14,36 @@ object Form4: TForm4
   PixelsPerInch = 96
   TextHeight = 13
   object labelCorreoElectronico: TLabel
-    Left = 147
-    Top = 104
+    Left = 11
+    Top = 96
     Width = 89
     Height = 13
     Caption = 'CorreoElectronico:'
   end
   object labelContrasenia: TLabel
-    Left = 176
-    Top = 144
+    Left = 40
+    Top = 136
     Width = 60
     Height = 13
     Caption = 'Contrase'#241'a:'
   end
   object txtCorreoElectronico: TEdit
-    Left = 272
-    Top = 101
+    Left = 136
+    Top = 93
     Width = 121
     Height = 21
     TabOrder = 0
   end
   object txtContrasenia: TEdit
-    Left = 272
-    Top = 141
+    Left = 136
+    Top = 133
     Width = 121
     Height = 21
     TabOrder = 1
   end
   object Button1: TButton
-    Left = 296
-    Top = 192
+    Left = 160
+    Top = 184
     Width = 75
     Height = 25
     Caption = 'Login'
@@ -51,8 +51,8 @@ object Form4: TForm4
     OnClick = loginClick
   end
   object txtNombre: TEdit
-    Left = 464
-    Top = 120
+    Left = 144
+    Top = 56
     Width = 121
     Height = 21
     TabOrder = 3
