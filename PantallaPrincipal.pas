@@ -49,8 +49,8 @@ begin
     txtNombre.Text := nombre;
     if (nombre.Equals('')) then
     begin
-      Form1.ShowModal;
-      Form4.CloseModal;
+      Form1.Show;
+      Form4.Visible := False;
     end;
 
     
