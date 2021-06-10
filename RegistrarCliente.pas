@@ -29,6 +29,7 @@ type
     Edit7: TEdit;
     Button1: TButton;
     Label12: TLabel;
+    Edit8: TEdit;
 
   private
     { Private declarations }
