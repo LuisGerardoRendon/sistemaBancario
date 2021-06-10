@@ -144,11 +144,11 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label11: TLabel
-    Left = 777
+    Left = 749
     Top = 203
-    Width = 86
+    Width = 114
     Height = 19
-    Caption = 'Saldo Inicial'
+    Caption = 'Moto del cr'#233'dito'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -157,11 +157,11 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 777
+    Left = 734
     Top = 259
-    Width = 86
+    Width = 130
     Height = 19
-    Caption = 'Saldo Inicial'
+    Caption = 'N'#250'mero de cuenta'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -256,7 +256,7 @@ object Form7: TForm7
     Width = 145
     Height = 21
     TabOrder = 6
-    Text = 'Debito'
+    Text = 'Cr'#233'dito'
   end
   object Edit7: TEdit
     Left = 928
@@ -278,5 +278,18 @@ object Form7: TForm7
     Height = 73
     Caption = 'Registrar Cliente'
     TabOrder = 8
+  end
+  object Edit8: TEdit
+    Left = 928
+    Top = 256
+    Width = 233
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 9
   end
 end
