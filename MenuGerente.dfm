@@ -33,7 +33,7 @@ object Form3: TForm3
     Top = 144
     Width = 249
     Height = 57
-    Caption = 'Registrar cliente'
+    Caption = 'Registrar cuenta'
     TabOrder = 1
   end
   object Button3: TButton

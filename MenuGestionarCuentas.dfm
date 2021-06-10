@@ -40,11 +40,11 @@ object Form5: TForm5
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 536
+    Left = 512
     Top = 25
-    Width = 212
+    Width = 248
     Height = 33
-    Caption = 'Cuentas cr'#233'dito'
+    Caption = 'Gestionar Cuentas'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27

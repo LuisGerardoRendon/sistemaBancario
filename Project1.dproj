@@ -107,6 +107,26 @@
             <Form>Form2</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="MenuGerente.pas">
+            <Form>Form3</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="MenuGestionarCuentas.pas">
+            <Form>Form5</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="InformacionCliente.pas">
+            <Form>Form6</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="RegistrarCliente.pas">
+            <Form>Form7</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="MenuInteresesRecargos.pas">
+            <Form>Form8</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -13,8 +13,9 @@ type
     txtCorreoElectronico: TEdit;
     txtContrasenia: TEdit;
     Button1: TButton;
-    txtNombre: TEdit;
+    Label1: TLabel;
     procedure loginClick(Sender: TObject);
+
   private
     nombre: string;
     { Private declarations }
@@ -31,6 +32,7 @@ implementation
 
 uses DataAccesModule, MenuCliente;
 
+
 procedure TForm4.loginClick(Sender: TObject);
 begin
   with DataModule1.ClienteTable do
@@ -46,7 +48,6 @@ begin
          Next;
     end;
     txtCorreoElectronico.Text:= 'Consultado';
-    txtNombre.Text := nombre;
     if (nombre.Equals('')) then
     begin
       Form1.Show;

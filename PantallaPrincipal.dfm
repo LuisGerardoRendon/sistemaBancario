@@ -27,35 +27,34 @@ object Form4: TForm4
     Height = 13
     Caption = 'Contrase'#241'a:'
   end
+  object Label1: TLabel
+    Left = 168
+    Top = 48
+    Width = 63
+    Height = 13
+    Caption = 'Iniciar Sesi'#243'n'
+  end
   object txtCorreoElectronico: TEdit
-    Left = 136
+    Left = 144
     Top = 93
     Width = 121
     Height = 21
     TabOrder = 0
   end
   object txtContrasenia: TEdit
-    Left = 136
+    Left = 144
     Top = 133
     Width = 121
     Height = 21
     TabOrder = 1
   end
   object Button1: TButton
-    Left = 160
+    Left = 168
     Top = 184
     Width = 75
     Height = 25
     Caption = 'Login'
     TabOrder = 2
     OnClick = loginClick
-  end
-  object txtNombre: TEdit
-    Left = 144
-    Top = 56
-    Width = 121
-    Height = 21
-    TabOrder = 3
-    Text = 'txtNombre'
   end
 end
