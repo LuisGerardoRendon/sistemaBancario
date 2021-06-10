@@ -6,6 +6,9 @@ uses
   DataAccesModule in 'DataAccesModule.pas' {DataModule1: TDataModule},
   MenuCliente in 'MenuCliente.pas' {Form1},
   MenuCajero in 'MenuCajero.pas' {Form2},
+  BuscarCliente in 'BuscarCliente.pas' {Form3},
+  CuentaDebito in 'CuentaDebito.pas' {Form5},
+  CuentaCredito in 'CuentaCredito.pas' {Form6};
   MenuGerente in 'MenuGerente.pas' {Form3},
   MenuGestionarCuentas in 'MenuGestionarCuentas.pas' {Form5},
   InformacionCliente in 'InformacionCliente.pas' {Form6},
@@ -17,7 +20,10 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TFormPantallaPrincipal, FormPantallaPrincipal);
+  Application.CreateForm(TFormCuentaDebito, FormCuentaDebito);
+  Application.CreateForm(TFormBuscarCliente, FormBuscarCliente);
+  Application.CreateForm(TFormCuentaCredito, FormCuentaCredito);
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TForm2, Form2);

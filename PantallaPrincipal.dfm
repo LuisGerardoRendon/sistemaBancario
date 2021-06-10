@@ -1,7 +1,7 @@
-object Form4: TForm4
+object FormPantallaPrincipal: TFormPantallaPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form4'
+  Caption = 'FormPantallaPrincipal'
   ClientHeight = 350
   ClientWidth = 400
   Color = clBtnFace
