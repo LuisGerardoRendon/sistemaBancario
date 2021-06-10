@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm3 = class(TForm)
+  TFormMenuGerente = class(TForm)
     Label1: TLabel;
     Button1: TButton;
     Button2: TButton;
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  Form3: TForm3;
+  FormMenuGerente: TFormMenuGerente;
 
 implementation
 

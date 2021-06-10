@@ -1,7 +1,7 @@
-object Form7: TForm7
+object FormRegistrarCliente: TFormRegistrarCliente
   Left = 0
   Top = 0
-  Caption = 'Form7'
+  Caption = 'FormRegistrarCliente'
   ClientHeight = 720
   ClientWidth = 1280
   Color = clBtnFace

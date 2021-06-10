@@ -46,10 +46,10 @@ begin
          nombre:= FieldByName('nombre').AsString;
          Next;
     end;
-    txtCorreoElectronico.Text:= 'Consultado';
-    if (nombre.Equals('')) then
+    txtCorreoElectronico.Text:= nombre;
+    if (nombre.Equals('Gerardo')) then   //Checar validación
     begin
-      Form1.Show;
+      FormMenuCliente.Show;
       FormPantallaPrincipal.Visible := False;
     end;
 

@@ -1,7 +1,7 @@
-object Form3: TForm3
+object FormMenuGerente: TFormMenuGerente
   Left = 0
   Top = 0
-  Caption = 'Form3'
+  Caption = 'FormMenuGerente'
   ClientHeight = 350
   ClientWidth = 400
   Color = clBtnFace

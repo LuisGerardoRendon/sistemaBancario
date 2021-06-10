@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
-  TForm1 = class(TForm)
+  TFormMenuCliente = class(TForm)
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
@@ -16,13 +16,13 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormMenuCliente: TFormMenuCliente;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TFormMenuCliente.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
      Application.Terminate;
 end;

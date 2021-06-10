@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm2 = class(TForm)
+  TFormMenuCajero = class(TForm)
     labelCajero: TLabel;
     Button1: TButton;
   private
@@ -17,7 +17,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  FormMenuCajero: TFormMenuCajero;
 
 implementation
 

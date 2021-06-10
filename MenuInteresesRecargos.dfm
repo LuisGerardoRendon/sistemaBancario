@@ -1,7 +1,7 @@
-object Form8: TForm8
+object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
   Left = 0
   Top = 0
-  Caption = 'Form8'
+  Caption = 'FormMenuInteresesRecargos'
   ClientHeight = 720
   ClientWidth = 1280
   Color = clBtnFace

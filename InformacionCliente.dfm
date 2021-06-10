@@ -1,7 +1,7 @@
-object Form6: TForm6
+object FormInformacionCliente: TFormInformacionCliente
   Left = 0
   Top = 0
-  Caption = 'Form6'
+  Caption = 'FormInformacionCliente'
   ClientHeight = 347
   ClientWidth = 400
   Color = clBtnFace

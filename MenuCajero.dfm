@@ -1,7 +1,7 @@
-object Form2: TForm2
+object FormMenuCajero: TFormMenuCajero
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'FormMenuCajero'
   ClientHeight = 299
   ClientWidth = 635
   Color = clBtnFace

@@ -1,7 +1,7 @@
-object Form5: TForm5
+object FormMenuGestionarCuentas: TFormMenuGestionarCuentas
   Left = 0
   Top = 0
-  Caption = 'Form5'
+  Caption = 'FormMenuGestionarCuentas'
   ClientHeight = 720
   ClientWidth = 1280
   Color = clBtnFace

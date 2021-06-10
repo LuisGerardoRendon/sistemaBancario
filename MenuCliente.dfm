@@ -1,4 +1,4 @@
-object Form1: TForm1
+object FormMenuCliente: TFormMenuCliente
   Left = 0
   Top = 0
   Caption = 'Menu Cliente'

@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm6 = class(TForm)
+  TFormInformacionCliente = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -22,7 +22,7 @@ type
   end;
 
 var
-  Form6: TForm6;
+  FormInformacionCliente: TFormInformacionCliente;
 
 implementation
 

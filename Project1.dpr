@@ -2,18 +2,18 @@ program Project1;
 
 uses
   Vcl.Forms,
-  PantallaPrincipal in 'PantallaPrincipal.pas' {Form4},
+  PantallaPrincipal in 'PantallaPrincipal.pas' {FormPantallaPrincipal},
   DataAccesModule in 'DataAccesModule.pas' {DataModule1: TDataModule},
-  MenuCliente in 'MenuCliente.pas' {Form1},
-  MenuCajero in 'MenuCajero.pas' {Form2},
-  BuscarCliente in 'BuscarCliente.pas' {Form3},
-  CuentaDebito in 'CuentaDebito.pas' {Form5},
-  CuentaCredito in 'CuentaCredito.pas' {Form6};
-  MenuGerente in 'MenuGerente.pas' {Form3},
-  MenuGestionarCuentas in 'MenuGestionarCuentas.pas' {Form5},
-  InformacionCliente in 'InformacionCliente.pas' {Form6},
-  RegistrarCliente in 'RegistrarCliente.pas' {Form7},
-  MenuInteresesRecargos in 'MenuInteresesRecargos.pas' {Form8};
+  MenuCliente in 'MenuCliente.pas' {FormMenuCliente},
+  MenuCajero in 'MenuCajero.pas' {FormMenuCajero},
+  BuscarCliente in 'BuscarCliente.pas' {FormBuscarCliente},
+  CuentaDebito in 'CuentaDebito.pas' {FormCuentaDebito},
+  CuentaCredito in 'CuentaCredito.pas' {FormCuentaCredito},
+  MenuGerente in 'MenuGerente.pas' {FormMenuGerente},
+  InformacionCliente in 'InformacionCliente.pas' {FormInformacionCliente},
+  MenuGestionarCuentas in 'MenuGestionarCuentas.pas' {FormMenuGestionarCuentas},
+  MenuInteresesRecargos in 'MenuInteresesRecargos.pas' {FormMenuInteresesRecargos},
+  RegistrarCliente in 'RegistrarCliente.pas' {FormRegistrarCliente};
 
 {$R *.res}
 
@@ -25,12 +25,12 @@ begin
   Application.CreateForm(TFormBuscarCliente, FormBuscarCliente);
   Application.CreateForm(TFormCuentaCredito, FormCuentaCredito);
   Application.CreateForm(TDataModule1, DataModule1);
-  Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TForm3, Form3);
-  Application.CreateForm(TForm5, Form5);
-  Application.CreateForm(TForm6, Form6);
-  Application.CreateForm(TForm7, Form7);
-  Application.CreateForm(TForm8, Form8);
+  Application.CreateForm(TFormMenuCliente, FormMenuCliente);
+  Application.CreateForm(TFormMenuCajero, FormMenuCajero);
+  Application.CreateForm(TFormMenuGerente, FormMenuGerente);
+  Application.CreateForm(TFormInformacionCliente, FormInformacionCliente);
+  Application.CreateForm(TFormMenuGestionarCuentas, FormMenuGestionarCuentas);
+  Application.CreateForm(TFormMenuInteresesRecargos, FormMenuInteresesRecargos);
+  Application.CreateForm(TFormRegistrarCliente, FormRegistrarCliente);
   Application.Run;
 end.

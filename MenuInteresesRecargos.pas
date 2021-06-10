@@ -8,7 +8,7 @@ uses
   Vcl.DBGrids;
 
 type
-  TForm8 = class(TForm)
+  TFormMenuInteresesRecargos = class(TForm)
     Label1: TLabel;
     DBGrid1: TDBGrid;
     Label2: TLabel;
@@ -21,7 +21,7 @@ type
   end;
 
 var
-  Form8: TForm8;
+  FormMenuInteresesRecargos: TFormMenuInteresesRecargos;
 
 implementation
 
