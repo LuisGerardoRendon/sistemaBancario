@@ -1,4 +1,4 @@
-object Form6: TForm6
+object FormCuentaCredito: TFormCuentaCredito
   Left = 0
   Top = 0
   Caption = 'Cuenta cr'#233'dito'

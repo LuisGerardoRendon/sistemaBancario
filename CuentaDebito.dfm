@@ -1,4 +1,4 @@
-object Form5: TForm5
+object FormCuentaDebito: TFormCuentaDebito
   Left = 0
   Top = 0
   Caption = 'Cuenta debito'

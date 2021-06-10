@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm5 = class(TForm)
+  TFormCuentaDebito = class(TForm)
     Label1: TLabel;
     Edit1: TEdit;
     Edit2: TEdit;
@@ -23,7 +23,7 @@ type
   end;
 
 var
-  Form5: TForm5;
+  FormCuentaDebito: TFormCuentaDebito;
 
 implementation
 

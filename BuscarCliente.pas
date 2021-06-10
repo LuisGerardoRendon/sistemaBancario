@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm3 = class(TForm)
+  TFormBuscarCliente = class(TForm)
     Edit1: TEdit;
     Button1: TButton;
     ListBox1: TListBox;
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  Form3: TForm3;
+  FormBuscarCliente: TFormBuscarCliente;
 
 implementation
 

@@ -1,4 +1,4 @@
-object Form3: TForm3
+object FormBuscarCliente: TFormBuscarCliente
   Left = 0
   Top = 0
   Caption = 'Buscar cliente'

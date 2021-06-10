@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, FireDAC.Stan.Param;
 
 type
-  TForm4 = class(TForm)
+  TFormPantallaPrincipal = class(TForm)
     labelCorreoElectronico: TLabel;
     labelContrasenia: TLabel;
     txtCorreoElectronico: TEdit;
@@ -24,14 +24,14 @@ type
   end;
 
 var
-  Form4: TForm4;
+  FormPantallaPrincipal: TFormPantallaPrincipal;
 
 implementation
 {$R *.dfm}
 
 uses DataAccesModule, MenuCliente;
 
-procedure TForm4.loginClick(Sender: TObject);
+procedure TFormPantallaPrincipal.loginClick(Sender: TObject);
 begin
   with DataModule1.ClienteTable do
   begin
@@ -50,7 +50,7 @@ begin
     if (nombre.Equals('')) then
     begin
       Form1.Show;
-      Form4.Visible := False;
+      FormPantallaPrincipal.Visible := False;
     end;
 
     
