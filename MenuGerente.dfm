@@ -13,6 +13,7 @@ object FormMenuGerente: TFormMenuGerente
   OldCreateOrder = False
   OnClose = onClose
   OnCreate = FormCreate
+  OnShow = cargarLabel
   PixelsPerInch = 96
   TextHeight = 13
   object LabelMenuGerente: TLabel
@@ -45,6 +46,7 @@ object FormMenuGerente: TFormMenuGerente
     Height = 57
     Caption = 'Registrar cuenta'
     TabOrder = 1
+    OnClick = clicRegistrarCuenta
   end
   object Button3: TButton
     Left = 72
@@ -53,5 +55,6 @@ object FormMenuGerente: TFormMenuGerente
     Height = 57
     Caption = 'Intereses y recargos'
     TabOrder = 2
+    OnClick = clicInteresesRecargos
   end
 end

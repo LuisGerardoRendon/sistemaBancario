@@ -14,6 +14,9 @@ type
     Label2: TLabel;
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
+    procedure onClose(Sender: TObject; var Action: TCloseAction);
+    procedure clicAtras(Sender: TObject);
   private
     { Private declarations }
   public
@@ -24,7 +27,20 @@ var
   FormMenuInteresesRecargos: TFormMenuInteresesRecargos;
 
 implementation
+uses MenuGerente;
 
 {$R *.dfm}
+
+procedure TFormMenuInteresesRecargos.clicAtras(Sender: TObject);
+begin
+  FormMenuGerente.Show;
+  FormMenuInteresesRecargos.Visible := False;
+end;
+
+procedure TFormMenuInteresesRecargos.onClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+Application.Terminate;
+end;
 
 end.

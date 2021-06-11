@@ -15,6 +15,9 @@ type
     Button1: TButton;
     Label4: TLabel;
     Button2: TButton;
+    Button3: TButton;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure clicAtras(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,7 +28,20 @@ var
   FormInformacionCliente: TFormInformacionCliente;
 
 implementation
+uses MenuGerente;
 
 {$R *.dfm}
+
+procedure TFormInformacionCliente.clicAtras(Sender: TObject);
+begin
+  FormMenuGerente.Show;
+  FormInformacionCliente.Visible := False;
+end;
+
+procedure TFormInformacionCliente.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+    Application.Terminate;
+end;
 
 end.

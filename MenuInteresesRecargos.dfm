@@ -11,6 +11,7 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = onClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -43,7 +44,7 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
     Left = 144
     Top = 120
     Width = 969
-    Height = 337
+    Height = 441
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -53,7 +54,7 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
   end
   object Button1: TButton
     Left = 368
-    Top = 512
+    Top = 576
     Width = 121
     Height = 49
     Caption = 'Generar recargo'
@@ -61,10 +62,19 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
   end
   object Button2: TButton
     Left = 757
-    Top = 512
+    Top = 576
     Width = 121
     Height = 49
     Caption = 'Generar Inter'#233's'
     TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 37
+    Top = 648
+    Width = 121
+    Height = 49
+    Caption = 'Atr'#225's'
+    TabOrder = 3
+    OnClick = clicAtras
   end
 end
