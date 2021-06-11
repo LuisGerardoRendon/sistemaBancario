@@ -11,6 +11,7 @@ object FormRegistrarCliente: TFormRegistrarCliente
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = onClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -272,8 +273,8 @@ object FormRegistrarCliente: TFormRegistrarCliente
     TabOrder = 7
   end
   object Button1: TButton
-    Left = 520
-    Top = 576
+    Left = 937
+    Top = 592
     Width = 224
     Height = 73
     Caption = 'Registrar Cliente'
@@ -291,5 +292,14 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Style = []
     ParentFont = False
     TabOrder = 9
+  end
+  object Button2: TButton
+    Left = 79
+    Top = 592
+    Width = 224
+    Height = 73
+    Caption = 'Atr'#225's'
+    TabOrder = 10
+    OnClick = clicAtras
   end
 end

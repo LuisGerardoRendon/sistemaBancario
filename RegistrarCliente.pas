@@ -30,6 +30,9 @@ type
     Button1: TButton;
     Label12: TLabel;
     Edit8: TEdit;
+    Button2: TButton;
+    procedure clicAtras(Sender: TObject);
+    procedure onClose(Sender: TObject; var Action: TCloseAction);
 
   private
     { Private declarations }
@@ -41,8 +44,21 @@ var
   FormRegistrarCliente: TFormRegistrarCliente;
 
 implementation
+uses InformacionCliente;
 
 {$R *.dfm}
 
+
+procedure TFormRegistrarCliente.clicAtras(Sender: TObject);
+begin
+  FormInformacionCliente.Show;
+  FormRegistrarCliente.Visible := False;
+end;
+
+procedure TFormRegistrarCliente.onClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+ Application.Terminate;
+end;
 
 end.

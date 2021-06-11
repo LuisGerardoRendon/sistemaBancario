@@ -65,7 +65,7 @@ begin
          Next;
     end;
     txtCorreoElectronico.Text:= nombre;
-    if not (Length(nombre)= 0) then   //Checar validación
+    if not (Length(nombre)= 0) then
     begin
       usuario := TUsuario.Create;
       usuario.nombres := nombre;
@@ -90,9 +90,7 @@ begin
         end;
         2:
         begin
-              //FormMenuGerente.usuario.nombres := nombre;
-              //FormMenuGerente.Show;
-              FormMenuGerente.Create(usuario);
+              FormMenuGerente.Show;
               FormPantallaPrincipal.Visible := False;
         end;
       end;
