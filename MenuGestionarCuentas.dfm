@@ -78,24 +78,25 @@ object FormMenuGestionarCuentas: TFormMenuGestionarCuentas
     TitleFont.Style = []
   end
   object Button1: TButton
-    Left = 192
-    Top = 560
+    Left = 424
+    Top = 544
     Width = 193
     Height = 49
     Caption = 'Congelar'
     TabOrder = 2
   end
   object Button2: TButton
-    Left = 544
-    Top = 560
+    Left = 24
+    Top = 648
     Width = 193
     Height = 49
-    Caption = 'Cancelar'
+    Caption = 'Atr'#225's'
     TabOrder = 3
+    OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 882
-    Top = 560
+    Left = 663
+    Top = 544
     Width = 193
     Height = 49
     Caption = 'Ver estado de cuenta'

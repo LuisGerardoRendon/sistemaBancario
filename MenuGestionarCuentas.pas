@@ -18,6 +18,7 @@ type
     Button3: TButton;
     Label3: TLabel;
     procedure onClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button2Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -31,9 +32,15 @@ var
 implementation
 
 {$R *.dfm}
+uses MenuGerente;
 
 
 
+procedure TFormMenuGestionarCuentas.Button2Click(Sender: TObject);
+begin
+  FormMenuGerente.Show;
+  FormMenuGestionarCuentas.Visible := False;
+end;
 
 procedure TFormMenuGestionarCuentas.onClose(Sender: TObject;
   var Action: TCloseAction);

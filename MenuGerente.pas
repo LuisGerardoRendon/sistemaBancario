@@ -25,7 +25,6 @@ type
   public
     usuarioGerente : TUsuario;
     nombreUsuario : string;
-    constructor Create(usuario: TUsuario);
     { Public declarations }
   end;
 
@@ -73,12 +72,4 @@ procedure TFormMenuGerente.onClose(Sender: TObject; var Action: TCloseAction);
 begin
  Application.Terminate;
 end;
-constructor TFormMenuGerente.Create( usuario: TUsuario);
-begin
-   usuarioGerente := usuario;
-   FormMenuGerente.Show;
-   //labelNombreGerente.Caption := usuarioGerente.nombres;
-   //showmessage(usuarioGerente.nombres);
-end;
-
 end.

@@ -71,6 +71,7 @@ object FormInformacionCliente: TFormInformacionCliente
     Height = 25
     Caption = 'Registrar Cliente'
     TabOrder = 2
+    OnClick = clicRegistrarCliente
   end
   object Button3: TButton
     Left = 24
