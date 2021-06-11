@@ -141,6 +141,25 @@
             <Form>FormRegistrarCliente</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="EstadoCuentaCredito.pas">
+            <Form>FormEstadoCuentaCredito</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="EstadoCuentaDebito.pas">
+            <Form>FormEstadoCuentaDebito</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DataModuleAldo.pas">
+            <Form>DataModuleAldoBD</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DataModuleDani.pas">
+            <Form>DataModuleDaniBD</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="UnitUsuario.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

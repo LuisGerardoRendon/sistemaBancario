@@ -13,8 +13,7 @@ uses
 type
   TDataModule1 = class(TDataModule)
     Banco_databaseConnection: TFDConnection;
-    ClienteTable: TFDQuery;
-    dsClientes: TDataSource;
+    UsuariobancoTable: TFDQuery;
   private
     { Private declarations }
   public

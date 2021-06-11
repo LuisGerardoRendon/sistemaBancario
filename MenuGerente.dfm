@@ -11,14 +11,23 @@ object FormMenuGerente: TFormMenuGerente
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = onClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
+  object LabelMenuGerente: TLabel
     Left = 152
     Top = 8
     Width = 68
     Height = 13
     Caption = 'Men'#250' Gerente'
+  end
+  object labelNombreGerente: TLabel
+    Left = 240
+    Top = 8
+    Width = 66
+    Height = 13
+    Caption = 'ggggggggggg'
   end
   object Button1: TButton
     Left = 72
@@ -27,6 +36,7 @@ object FormMenuGerente: TFormMenuGerente
     Height = 57
     Caption = 'Gestionar cuentas'
     TabOrder = 0
+    OnClick = clicGestionarCuentas
   end
   object Button2: TButton
     Left = 72

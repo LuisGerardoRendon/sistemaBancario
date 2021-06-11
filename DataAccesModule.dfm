@@ -7,19 +7,18 @@ object DataModule1: TDataModule1
       'ConnectionDef=banco_database')
     Connected = True
     LoginPrompt = False
-    Left = 309
+    Left = 445
     Top = 142
   end
-  object ClienteTable: TFDQuery
+  object UsuariobancoTable: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
-      'SELECT * FROM banco_database.cliente'
+      'SELECT * FROM banco_database.usuarioBanco'
       
         'WHERE correoElectronico = :correoElectronico AND contrasenia = :' +
-        'contrasenia'
-      '')
-    Left = 309
-    Top = 206
+        'contrasenia')
+    Left = 444
+    Top = 212
     ParamData = <
       item
         Name = 'CORREOELECTRONICO'
@@ -33,10 +32,5 @@ object DataModule1: TDataModule1
         ParamType = ptInput
         Value = Null
       end>
-  end
-  object dsClientes: TDataSource
-    DataSet = ClienteTable
-    Left = 424
-    Top = 224
   end
 end
