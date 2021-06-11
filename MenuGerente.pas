@@ -16,6 +16,9 @@ type
     procedure onClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure clicGestionarCuentas(Sender: TObject);
+    procedure cargarLabel(Sender: TObject);
+    procedure clicRegistrarCuenta(Sender: TObject);
+    procedure clicInteresesRecargos(Sender: TObject);
 
   private
     { Private declarations }
@@ -36,22 +39,35 @@ uses PantallaPrincipal, MenuGestionarCuentas, MenuInteresesRecargos, Informacion
 
 {$R *.dfm}
 
+procedure TFormMenuGerente.cargarLabel(Sender: TObject);
+begin
+  usuarioGerente := PantallaPrincipal.FormPantallaPrincipal.usuario;
+  labelNombreGerente.Caption := usuarioGerente.nombres;
+end;
+
 procedure TFormMenuGerente.clicGestionarCuentas(Sender: TObject);
 begin
+  MenuGestionarCuentas.FormMenuGestionarCuentas.Show;
+  FormMenuGerente.Visible := False;
+end;
 
-  usuarioGerente := PantallaPrincipal.FormPantallaPrincipal.usuario;
-  //nombreUsuario :=  PantallaPrincipal.FormPantallaPrincipal.usuario.nombres;
-  //nombreUsuario := usuarioGerente.nombres;
-  labelNombreGerente.Caption := usuarioGerente.nombres;
-  //showmessage(nombreUsuario);
+procedure TFormMenuGerente.clicInteresesRecargos(Sender: TObject);
+begin
+  FormMenuInteresesRecargos.Show;
+  FormMenuGerente.Visible := False;
+end;
+
+procedure TFormMenuGerente.clicRegistrarCuenta(Sender: TObject);
+begin
+  FormInformacionCliente.Show;
+  FormMenuGerente.Visible := False;
 end;
 
 procedure TFormMenuGerente.FormCreate(Sender: TObject);
 begin
   usuarioGerente := PantallaPrincipal.FormPantallaPrincipal.usuario;
-  labelNombreGerente.Caption := usuarioGerente.nombres;
-
 end;
+
 
 procedure TFormMenuGerente.onClose(Sender: TObject; var Action: TCloseAction);
 begin

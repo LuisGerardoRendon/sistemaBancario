@@ -11,6 +11,7 @@ object FormInformacionCliente: TFormInformacionCliente
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -70,5 +71,14 @@ object FormInformacionCliente: TFormInformacionCliente
     Height = 25
     Caption = 'Registrar Cliente'
     TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 24
+    Top = 296
+    Width = 75
+    Height = 25
+    Caption = 'Atr'#225's'
+    TabOrder = 3
+    OnClick = clicAtras
   end
 end

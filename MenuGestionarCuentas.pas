@@ -17,6 +17,7 @@ type
     Button2: TButton;
     Button3: TButton;
     Label3: TLabel;
+    procedure onClose(Sender: TObject; var Action: TCloseAction);
 
   private
     { Private declarations }
@@ -33,5 +34,11 @@ implementation
 
 
 
+
+procedure TFormMenuGestionarCuentas.onClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+Application.Terminate;
+end;
 
 end.
