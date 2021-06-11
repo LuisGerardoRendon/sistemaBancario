@@ -13,7 +13,12 @@ uses
   InformacionCliente in 'InformacionCliente.pas' {FormInformacionCliente},
   MenuGestionarCuentas in 'MenuGestionarCuentas.pas' {FormMenuGestionarCuentas},
   MenuInteresesRecargos in 'MenuInteresesRecargos.pas' {FormMenuInteresesRecargos},
-  RegistrarCliente in 'RegistrarCliente.pas' {FormRegistrarCliente};
+  RegistrarCliente in 'RegistrarCliente.pas' {FormRegistrarCliente},
+  EstadoCuentaCredito in 'EstadoCuentaCredito.pas' {FormEstadoCuentaCredito},
+  EstadoCuentaDebito in 'EstadoCuentaDebito.pas' {FormEstadoCuentaDebito},
+  DataModuleAldo in 'DataModuleAldo.pas' {DataModuleAldoBD: TDataModule},
+  DataModuleDani in 'DataModuleDani.pas' {DataModuleDaniBD: TDataModule},
+  UnitUsuario in 'UnitUsuario.pas';
 
 {$R *.res}
 
@@ -32,5 +37,9 @@ begin
   Application.CreateForm(TFormMenuGestionarCuentas, FormMenuGestionarCuentas);
   Application.CreateForm(TFormMenuInteresesRecargos, FormMenuInteresesRecargos);
   Application.CreateForm(TFormRegistrarCliente, FormRegistrarCliente);
+  Application.CreateForm(TFormEstadoCuentaCredito, FormEstadoCuentaCredito);
+  Application.CreateForm(TFormEstadoCuentaDebito, FormEstadoCuentaDebito);
+  Application.CreateForm(TDataModuleAldoBD, DataModuleAldoBD);
+  Application.CreateForm(TDataModuleDaniBD, DataModuleDaniBD);
   Application.Run;
 end.

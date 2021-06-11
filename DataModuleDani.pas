@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes;
 
 type
-  TDataModule3 = class(TDataModule)
+  TDataModuleDaniBD = class(TDataModule)
   private
     { Private declarations }
   public
@@ -14,7 +14,7 @@ type
   end;
 
 var
-  DataModule3: TDataModule3;
+  DataModuleDaniBD: TDataModuleDaniBD;
 
 implementation
 
