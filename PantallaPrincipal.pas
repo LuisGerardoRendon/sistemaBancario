@@ -46,7 +46,7 @@ uses DataAccesModule, MenuCliente, MenuGerente, MenuCajero;
 
 procedure TFormPantallaPrincipal.loginClick(Sender: TObject);
 begin
-  with DataModule1.UsuarioBancoTable do
+  with DataAccesModule_.UsuarioBancoTable do
   begin
     Prepare;
     ParamByName('correoElectronico').AsString:= txtCorreoElectronico.Text;

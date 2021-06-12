@@ -3,7 +3,7 @@ program Project1;
 uses
   Vcl.Forms,
   PantallaPrincipal in 'PantallaPrincipal.pas' {FormPantallaPrincipal},
-  DataAccesModule in 'DataAccesModule.pas' {DataModule1: TDataModule},
+  DataAccesModule in 'DataAccesModule.pas' {DataAccesModule_: TDataModule},
   MenuCliente in 'MenuCliente.pas' {FormMenuCliente},
   MenuCajero in 'MenuCajero.pas' {FormMenuCajero},
   BuscarCliente in 'BuscarCliente.pas' {FormBuscarCliente},
@@ -18,7 +18,11 @@ uses
   EstadoCuentaDebito in 'EstadoCuentaDebito.pas' {FormEstadoCuentaDebito},
   DataModuleAldo in 'DataModuleAldo.pas' {DataModuleAldoBD: TDataModule},
   DataModuleDani in 'DataModuleDani.pas' {DataModuleDaniBD: TDataModule},
-  UnitUsuario in 'UnitUsuario.pas';
+  UnitUsuario in 'UnitUsuario.pas',
+  GestionarCuentasCredito in 'GestionarCuentasCredito.pas' {FormGestionarCuentasCredito},
+  GestionarCuentasDebito in 'GestionarCuentasDebito.pas' {FormCuestionarCuentasDebito},
+  GestionarCuentaCredito in 'GestionarCuentaCredito.pas' {FormGestionarCuenta},
+  GestionarCuentaDebito in 'GestionarCuentaDebito.pas' {Form1};
 
 {$R *.res}
 
@@ -29,7 +33,7 @@ begin
   Application.CreateForm(TFormCuentaDebito, FormCuentaDebito);
   Application.CreateForm(TFormBuscarCliente, FormBuscarCliente);
   Application.CreateForm(TFormCuentaCredito, FormCuentaCredito);
-  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TDataAccesModule_, DataAccesModule_);
   Application.CreateForm(TFormMenuCliente, FormMenuCliente);
   Application.CreateForm(TFormMenuCajero, FormMenuCajero);
   Application.CreateForm(TFormMenuGerente, FormMenuGerente);
@@ -41,5 +45,9 @@ begin
   Application.CreateForm(TFormEstadoCuentaDebito, FormEstadoCuentaDebito);
   Application.CreateForm(TDataModuleAldoBD, DataModuleAldoBD);
   Application.CreateForm(TDataModuleDaniBD, DataModuleDaniBD);
+  Application.CreateForm(TFormGestionarCuentasCredito, FormGestionarCuentasCredito);
+  Application.CreateForm(TFormCuestionarCuentasDebito, FormCuestionarCuentasDebito);
+  Application.CreateForm(TFormGestionarCuenta, FormGestionarCuenta);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.

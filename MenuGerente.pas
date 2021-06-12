@@ -13,12 +13,14 @@ type
     Button2: TButton;
     Button3: TButton;
     labelNombreGerente: TLabel;
+    Button4: TButton;
     procedure onClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
-    procedure clicGestionarCuentas(Sender: TObject);
+    procedure clicGestionarCuentasCredit(Sender: TObject);
     procedure cargarLabel(Sender: TObject);
     procedure clicRegistrarCuenta(Sender: TObject);
     procedure clicInteresesRecargos(Sender: TObject);
+    procedure clicGestionarCuentasDebito(Sender: TObject);
 
   private
     { Private declarations }
@@ -34,7 +36,7 @@ var
 
 implementation
 
-uses PantallaPrincipal, MenuGestionarCuentas, MenuInteresesRecargos, InformacionCliente;
+uses PantallaPrincipal,GestionarCuentasDebito ,GestionarCuentasCredito, MenuInteresesRecargos, InformacionCliente;
 
 {$R *.dfm}
 
@@ -44,9 +46,15 @@ begin
   labelNombreGerente.Caption := usuarioGerente.nombres;
 end;
 
-procedure TFormMenuGerente.clicGestionarCuentas(Sender: TObject);
+procedure TFormMenuGerente.clicGestionarCuentasCredit(Sender: TObject);
 begin
-  MenuGestionarCuentas.FormMenuGestionarCuentas.Show;
+  FormGestionarCuentasCredito.Show;
+  FormMenuGerente.Visible := False;
+end;
+
+procedure TFormMenuGerente.clicGestionarCuentasDebito(Sender: TObject);
+begin
+  GestionarCuentasDebito.FormCuestionarCuentasDebito.Show;
   FormMenuGerente.Visible := False;
 end;
 

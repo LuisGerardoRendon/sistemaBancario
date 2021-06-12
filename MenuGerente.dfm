@@ -35,26 +35,34 @@ object FormMenuGerente: TFormMenuGerente
     Top = 64
     Width = 249
     Height = 57
-    Caption = 'Gestionar cuentas'
+    Caption = 'Gestionar cuentas de cr'#233'dito'
     TabOrder = 0
-    OnClick = clicGestionarCuentas
+    OnClick = clicGestionarCuentasCredit
   end
   object Button2: TButton
     Left = 72
-    Top = 144
+    Top = 192
     Width = 249
     Height = 57
     Caption = 'Registrar cuenta'
     TabOrder = 1
-    OnClick = clicRegistrarCuenta
   end
   object Button3: TButton
     Left = 72
-    Top = 232
+    Top = 255
     Width = 249
     Height = 57
     Caption = 'Intereses y recargos'
     TabOrder = 2
     OnClick = clicInteresesRecargos
+  end
+  object Button4: TButton
+    Left = 72
+    Top = 127
+    Width = 249
+    Height = 59
+    Caption = 'Gestionar cuentas de d'#233'bito'
+    TabOrder = 3
+    OnClick = clicGestionarCuentasDebito
   end
 end

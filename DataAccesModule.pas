@@ -11,9 +11,14 @@ uses
   FireDAC.Comp.Client;
 
 type
-  TDataModule1 = class(TDataModule)
+  TDataAccesModule_ = class(TDataModule)
     Banco_databaseConnection: TFDConnection;
     UsuariobancoTable: TFDQuery;
+    CuentadebitoTable: TFDQuery;
+    CuentacreditoTable: TFDQuery;
+    dsCuentaCredito: TDataSource;
+    dsCuentaDebito: TDataSource;
+    actualizarEstadoCuenta: TFDQuery;
   private
     { Private declarations }
   public
@@ -21,12 +26,14 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  DataAccesModule_: TDataAccesModule_;
 
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+
 
 end.
