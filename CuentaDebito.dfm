@@ -11,6 +11,9 @@ object FormCuentaDebito: TFormCuentaDebito
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -22,56 +25,80 @@ object FormCuentaDebito: TFormCuentaDebito
   end
   object Label2: TLabel
     Left = 16
-    Top = 128
+    Top = 163
     Width = 101
     Height = 13
     Caption = 'Registrar movimiento'
   end
-  object Edit1: TEdit
-    Left = 16
+  object Label3: TLabel
+    Left = 29
+    Top = 38
+    Width = 88
+    Height = 13
+    Caption = 'Nombre del cliente'
+  end
+  object Label4: TLabel
+    Left = 29
+    Top = 65
+    Width = 88
+    Height = 13
+    Caption = 'N'#250'mero de cuenta'
+  end
+  object Label5: TLabel
+    Left = 59
+    Top = 92
+    Width = 58
+    Height = 13
+    Caption = 'Saldo actual'
+  end
+  object txtNombre: TEdit
+    Left = 123
     Top = 35
     Width = 169
     Height = 21
+    ReadOnly = True
     TabOrder = 0
-    TextHint = 'Nombre cliente'
   end
-  object Edit2: TEdit
-    Left = 16
+  object txtNumCuenta: TEdit
+    Left = 123
     Top = 62
     Width = 169
     Height = 21
+    ReadOnly = True
     TabOrder = 1
-    TextHint = 'N'#250'mero de cuenta'
   end
-  object Edit3: TEdit
-    Left = 16
+  object txtSaldo: TEdit
+    Left = 123
     Top = 89
     Width = 169
     Height = 21
+    ReadOnly = True
     TabOrder = 2
-    TextHint = 'Saldo actual'
   end
-  object Button1: TButton
+  object btnRetirar: TButton
     Left = 16
-    Top = 177
+    Top = 212
     Width = 75
     Height = 25
     Caption = 'Retirar'
     TabOrder = 3
+    OnClick = btnRetirarClick
   end
-  object Button2: TButton
+  object btnAbonar: TButton
     Left = 110
-    Top = 177
+    Top = 212
     Width = 75
     Height = 25
     Caption = 'Abonar'
     TabOrder = 4
+    OnClick = btnAbonarClick
   end
-  object Edit4: TEdit
+  object txtMonto: TEdit
     Left = 16
-    Top = 150
+    Top = 185
     Width = 169
     Height = 21
+    NumbersOnly = True
     TabOrder = 5
     TextHint = 'Ingrese el monto'
   end

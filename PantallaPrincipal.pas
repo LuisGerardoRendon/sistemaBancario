@@ -25,6 +25,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    idUsuario : integer;
     nombre: string;
     apellidoPaterno: string;
     apellidoMaterno: string;
@@ -42,7 +43,7 @@ var
 implementation
 {$R *.dfm}
 
-uses DataAccesModule, MenuCliente, MenuGerente, MenuCajero;
+uses DataAccesModule, MenuCliente, MenuGerente, BuscarCliente;
 
 procedure TFormPantallaPrincipal.loginClick(Sender: TObject);
 begin
@@ -55,6 +56,7 @@ begin
     First;
     while not EOF do
     begin
+         idUsuario := FieldByName('idUsuario').AsInteger;
          nombre:= FieldByName('nombres').AsString;
          apellidoPaterno := FieldByName('apellidoPaterno').AsString;
          apellidoMaterno := FieldByName('apellidoMaterno').AsString;
@@ -68,6 +70,7 @@ begin
     if not (Length(nombre)= 0) then
     begin
       usuario := TUsuario.Create;
+      usuario.idUsuario := idUsuario;
       usuario.nombres := nombre;
       usuario.apellidoPaterno := apellidoPaterno;
       usuario.apellidoMaterno := apellidoMaterno;
@@ -85,7 +88,7 @@ begin
         end;
         1:
         begin
-           FormMenuCajero.Show;
+           FormBuscarCliente.Show;
            FormPantallaPrincipal.Visible := False;
         end;
         2:

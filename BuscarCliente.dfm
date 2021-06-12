@@ -1,6 +1,6 @@
 object FormBuscarCliente: TFormBuscarCliente
   Left = 0
-  Top = 0
+  Top = 17
   Caption = 'Buscar cliente'
   ClientHeight = 350
   ClientWidth = 400
@@ -11,38 +11,40 @@ object FormBuscarCliente: TFormBuscarCliente
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
-  object Edit1: TEdit
+  object Label1: TLabel
     Left = 16
-    Top = 16
-    Width = 273
+    Top = 120
+    Width = 167
+    Height = 13
+    Caption = 'Ingrese la clave elector del cliente:'
+  end
+  object txtClaveElector: TEdit
+    Left = 8
+    Top = 147
+    Width = 292
     Height = 21
     TabOrder = 0
-    TextHint = 'N'#250'mero de cuenta'
+    TextHint = 'Cadena de 10 d'#237'gitos'
   end
-  object Button1: TButton
-    Left = 304
-    Top = 14
+  object btnBuscar: TButton
+    Left = 306
+    Top = 145
     Width = 75
     Height = 25
     Caption = 'Buscar'
     TabOrder = 1
+    OnClick = btnBuscarClick
   end
-  object ListBox1: TListBox
-    Left = 16
-    Top = 56
-    Width = 363
-    Height = 233
-    ItemHeight = 13
-    TabOrder = 2
-  end
-  object Button2: TButton
-    Left = 280
-    Top = 307
+  object btnVerCuenta: TButton
+    Left = 1177
+    Top = 683
     Width = 92
-    Height = 25
+    Height = 21
     Caption = 'Ver cuenta'
-    TabOrder = 3
+    TabOrder = 2
   end
 end

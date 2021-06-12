@@ -11,6 +11,7 @@ object FormPantallaPrincipal: TFormPantallaPrincipal
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object labelCorreoElectronico: TLabel
@@ -46,6 +47,7 @@ object FormPantallaPrincipal: TFormPantallaPrincipal
     Top = 133
     Width = 121
     Height = 21
+    PasswordChar = '*'
     TabOrder = 1
   end
   object Button1: TButton
