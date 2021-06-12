@@ -5,7 +5,6 @@ uses
   PantallaPrincipal in 'PantallaPrincipal.pas' {FormPantallaPrincipal},
   DataAccesModule in 'DataAccesModule.pas' {DataModule1: TDataModule},
   MenuCliente in 'MenuCliente.pas' {FormMenuCliente},
-  MenuCajero in 'MenuCajero.pas' {FormMenuCajero},
   BuscarCliente in 'BuscarCliente.pas' {FormBuscarCliente},
   CuentaDebito in 'CuentaDebito.pas' {FormCuentaDebito},
   CuentaCredito in 'CuentaCredito.pas' {FormCuentaCredito},
@@ -18,7 +17,10 @@ uses
   EstadoCuentaDebito in 'EstadoCuentaDebito.pas' {FormEstadoCuentaDebito},
   DataModuleAldo in 'DataModuleAldo.pas' {DataModuleAldoBD: TDataModule},
   DataModuleDani in 'DataModuleDani.pas' {DataModuleDaniBD: TDataModule},
-  UnitUsuario in 'UnitUsuario.pas';
+  UnitUsuario in 'UnitUsuario.pas',
+  ElegirCuenta in 'ElegirCuenta.pas' {FormElegirCuenta},
+  UnitCuentaDebito in 'UnitCuentaDebito.pas',
+  UnitCuentaCredito in 'UnitCuentaCredito.pas';
 
 {$R *.res}
 
@@ -31,7 +33,6 @@ begin
   Application.CreateForm(TFormCuentaCredito, FormCuentaCredito);
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TFormMenuCliente, FormMenuCliente);
-  Application.CreateForm(TFormMenuCajero, FormMenuCajero);
   Application.CreateForm(TFormMenuGerente, FormMenuGerente);
   Application.CreateForm(TFormInformacionCliente, FormInformacionCliente);
   Application.CreateForm(TFormMenuGestionarCuentas, FormMenuGestionarCuentas);
@@ -41,5 +42,6 @@ begin
   Application.CreateForm(TFormEstadoCuentaDebito, FormEstadoCuentaDebito);
   Application.CreateForm(TDataModuleAldoBD, DataModuleAldoBD);
   Application.CreateForm(TDataModuleDaniBD, DataModuleDaniBD);
+  Application.CreateForm(TFormElegirCuenta, FormElegirCuenta);
   Application.Run;
 end.
