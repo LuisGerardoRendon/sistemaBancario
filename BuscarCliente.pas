@@ -15,8 +15,6 @@ type
     Label1: TLabel;
     procedure btnBuscarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    function getCuentaCredito(id : integer) : TCuentaCredito;
-    function getCuentaDebito(id : integer) : TCuentaDebito;
   private
     idUsuario : integer;
     nombre: string;
@@ -102,50 +100,4 @@ procedure TFormBuscarCliente.FormClose(Sender: TObject; var Action: TCloseAction
 begin
   Application.Terminate;
 end;
-
-function TFormBuscarCliente.getCuentaCredito(id: integer): TCuentaCredito;
-begin
-  with DataModuleDaniBD.CuentacreditoTable do
-  begin
-    Prepare;
-    ParamByName('idUsuario').AsInteger := id;
-    Open;
-    First;
-    while not EOF do
-    begin
-      cuentaCredito.estadoCuenta := FieldByName('estadoCuenta').AsString;
-      cuentaCredito.deudaTotal := FieldByName('deudaTotal').AsInteger;
-      cuentaCredito.idClienteCuenta := FieldByName('id_cliente_cuenta').AsInteger;
-      cuentaCredito.idCuentaCredito := FieldByName('id_cuenta_credito').AsInteger;
-      cuentaCredito.numeroDeCuenta := FieldByName('numeroDeCuenta').AsString;
-      Next;
-    end;
-
-    Result := cuentaCredito;
-  end;
-end;
-
-function TFormBuscarCliente.getCuentaDebito(id: integer): TCuentaDebito;
-begin
-  with DataModuleDaniBD.CuentaDebitoTable do
-  begin
-    cuentaDebito := TCuentaDebito.Create;
-    Prepare;
-    ParamByName('idUsuario').AsInteger := id;
-    Open;
-    First;
-    while not EOF do
-    begin
-      cuentaDebito.estadoCuenta := FieldByName('estadoCuenta').AsString;
-      cuentaDebito.saldo := FieldByName('saldo').AsCurrency;
-      cuentaDebito.idClienteCuenta := FieldByName('id_cliente_cuenta').AsInteger;
-      cuentaDebito.idCuentaDebito := FieldByName('id_cuenta_debito').AsInteger;
-      cuentaDebito.numeroDeCuenta := FieldByName('numeroDeCuenta').AsString;
-      Next;
-    end;
-
-    Result := cuentaDebito;
-  end;
-end;
-
 end.

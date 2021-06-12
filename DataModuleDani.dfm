@@ -62,4 +62,11 @@ object DataModuleDaniBD: TDataModuleDaniBD
         Value = Null
       end>
   end
+  object updateSaldoCuenta: TFDTable
+    Connection = Banco_databaseConnection
+    UpdateOptions.UpdateTableName = 'banco_database.cuentaDebito'
+    TableName = 'banco_database.cuentaDebito'
+    Left = 384
+    Top = 208
+  end
 end

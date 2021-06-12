@@ -11,6 +11,9 @@ object FormCuentaCredito: TFormCuentaCredito
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -20,29 +23,49 @@ object FormCuentaCredito: TFormCuentaCredito
     Height = 13
     Caption = 'Informaci'#243'n de cuenta de cr'#233'dtio'
   end
-  object Edit1: TEdit
-    Left = 16
-    Top = 62
-    Width = 169
-    Height = 21
-    TabOrder = 0
-    TextHint = 'Deuda actual'
-  end
-  object Edit2: TEdit
-    Left = 16
+  object Label2: TLabel
+    Left = 56
     Top = 35
+    Width = 88
+    Height = 13
+    Caption = 'Nombre del cliente'
+  end
+  object Label3: TLabel
+    Left = 81
+    Top = 62
+    Width = 63
+    Height = 13
+    Caption = 'Deuda actual'
+  end
+  object Label4: TLabel
+    Left = 26
+    Top = 89
+    Width = 118
+    Height = 13
+    Caption = 'Monto de la mensualidad'
+  end
+  object txtDeuda: TEdit
+    Left = 160
+    Top = 59
     Width = 169
     Height = 21
-    TabOrder = 1
-    TextHint = 'Nombre del cliente'
+    ReadOnly = True
+    TabOrder = 0
   end
-  object Edit3: TEdit
-    Left = 16
-    Top = 89
+  object txtNombre: TEdit
+    Left = 160
+    Top = 32
+    Width = 169
+    Height = 21
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object txtMonto: TEdit
+    Left = 160
+    Top = 86
     Width = 169
     Height = 21
     TabOrder = 2
-    TextHint = 'Monto de la mensualidad'
   end
   object Button1: TButton
     Left = 272

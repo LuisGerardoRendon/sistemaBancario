@@ -17,6 +17,7 @@ type
     dsUsuarios: TDataSource;
     CuentacreditoTable: TFDQuery;
     CuentadebitoTable: TFDQuery;
+    updateSaldoCuenta: TFDTable;
   private
     { Private declarations }
   public
@@ -32,4 +33,5 @@ implementation
 
 {$R *.dfm}
 
+{ TDataModuleDaniBD }
 end.

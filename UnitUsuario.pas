@@ -16,8 +16,10 @@ uses System.SysUtils, System.Variants,
     telefono: string;
     contrasenia: string;
     tipo: integer;
+    nombreCompleto : string;
     function getCuentaCredito : TCuentaCredito;
     function getCuentaDebito : TCuentaDebito;
+    function getNombreCompleto : string;
 
   end;
   var
@@ -73,6 +75,12 @@ begin
 
     Result := cuentaDebito;
   end;
+end;
+
+function TUsuario.getNombreCompleto: string;
+begin
+  nombreCompleto := nombres + ' ' + apellidoPaterno + ' ' + apellidoMaterno;
+  Result :=  nombreCompleto;
 end;
 
 end.
