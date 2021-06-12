@@ -1,4 +1,4 @@
-object DataModule1: TDataModule1
+object DataAccesModule_: TDataAccesModule_
   OldCreateOrder = False
   Height = 602
   Width = 886
@@ -28,6 +28,65 @@ object DataModule1: TDataModule1
       end
       item
         Name = 'CONTRASENIA'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object CuentadebitoTable: TFDQuery
+    Active = True
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      
+        'SELECT numeroDeCuenta AS NumeroDecuenta, COUNT(id_cuenta_movimie' +
+        'nto) AS NumeroDeMovimientos'
+      'FROM cuentaDebito'
+      
+        '         INNER JOIN movimiento ON cuentaDebito.id_cuenta_debito ' +
+        '= movimiento.id_cuenta_movimiento'
+      'GROUP BY id_cuenta_debito ORDER BY NumeroDeMovimientos DESC')
+    Left = 217
+    Top = 328
+  end
+  object CuentacreditoTable: TFDQuery
+    Active = True
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      
+        'SELECT cuentaC.numeroDeCuenta AS NumeroDeCuenta, cuentaC.deudaTo' +
+        'tal AS DeudaTotal, cuentaI.totalInteresesAcumulados AS TotalCuen' +
+        'taIntereses FROM banco_database.cuentaCredito cuentaC INNER JOIN' +
+        ' cuentaIntereses cuentaI ON cuentaC.id_cuenta_credito = cuentaI.' +
+        'idCuentaCredito order by  cuentaI.totalInteresesAcumulados DESC;')
+    Left = 622
+    Top = 359
+  end
+  object dsCuentaCredito: TDataSource
+    DataSet = CuentacreditoTable
+    Left = 736
+    Top = 400
+  end
+  object dsCuentaDebito: TDataSource
+    DataSet = CuentadebitoTable
+    Left = 104
+    Top = 408
+  end
+  object actualizarEstadoCuenta: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      'UPDATE cuentaCredito set estadoCuenta = :estadoDeCuenta'
+      'WHERE numeroDeCuenta = :numeroDeCuenta;')
+    Left = 355
+    Top = 280
+    ParamData = <
+      item
+        Name = 'ESTADODECUENTA'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'NUMERODECUENTA'
         DataType = ftString
         ParamType = ptInput
         Value = Null

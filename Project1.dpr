@@ -3,7 +3,7 @@ program Project1;
 uses
   Vcl.Forms,
   PantallaPrincipal in 'PantallaPrincipal.pas' {FormPantallaPrincipal},
-  DataAccesModule in 'DataAccesModule.pas' {DataModule1: TDataModule},
+  DataAccesModule in 'DataAccesModule.pas' {DataAccesModule_: TDataModule},
   MenuCliente in 'MenuCliente.pas' {FormMenuCliente},
   BuscarCliente in 'BuscarCliente.pas' {FormBuscarCliente},
   CuentaDebito in 'CuentaDebito.pas' {FormCuentaDebito},
@@ -18,6 +18,10 @@ uses
   DataModuleAldo in 'DataModuleAldo.pas' {DataModuleAldoBD: TDataModule},
   DataModuleDani in 'DataModuleDani.pas' {DataModuleDaniBD: TDataModule},
   UnitUsuario in 'UnitUsuario.pas',
+  GestionarCuentasCredito in 'GestionarCuentasCredito.pas' {FormGestionarCuentasCredito},
+  GestionarCuentasDebito in 'GestionarCuentasDebito.pas' {FormCuestionarCuentasDebito},
+  GestionarCuentaCredito in 'GestionarCuentaCredito.pas' {FormGestionarCuenta},
+  GestionarCuentaDebito in 'GestionarCuentaDebito.pas' {Form1},
   ElegirCuenta in 'ElegirCuenta.pas' {FormElegirCuenta},
   UnitCuentaDebito in 'UnitCuentaDebito.pas',
   UnitCuentaCredito in 'UnitCuentaCredito.pas';
@@ -31,7 +35,7 @@ begin
   Application.CreateForm(TFormCuentaDebito, FormCuentaDebito);
   Application.CreateForm(TFormBuscarCliente, FormBuscarCliente);
   Application.CreateForm(TFormCuentaCredito, FormCuentaCredito);
-  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TDataAccesModule_, DataAccesModule_);
   Application.CreateForm(TFormMenuCliente, FormMenuCliente);
   Application.CreateForm(TFormMenuGerente, FormMenuGerente);
   Application.CreateForm(TFormInformacionCliente, FormInformacionCliente);
@@ -42,6 +46,10 @@ begin
   Application.CreateForm(TFormEstadoCuentaDebito, FormEstadoCuentaDebito);
   Application.CreateForm(TDataModuleAldoBD, DataModuleAldoBD);
   Application.CreateForm(TDataModuleDaniBD, DataModuleDaniBD);
+  Application.CreateForm(TFormGestionarCuentasCredito, FormGestionarCuentasCredito);
+  Application.CreateForm(TFormCuestionarCuentasDebito, FormCuestionarCuentasDebito);
+  Application.CreateForm(TFormGestionarCuenta, FormGestionarCuenta);
+  Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TFormElegirCuenta, FormElegirCuenta);
   Application.Run;
 end.

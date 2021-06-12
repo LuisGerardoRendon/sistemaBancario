@@ -9,16 +9,18 @@ uses
 
 type
   TFormMenuGestionarCuentas = class(TForm)
-    DBGrid1: TDBGrid;
-    DBGrid2: TDBGrid;
+    DBGridCuentasCredito: TDBGrid;
+    DBGridCuentasDebito: TDBGrid;
     Label1: TLabel;
     Label2: TLabel;
-    Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
     Label3: TLabel;
+    Label4: TLabel;
     procedure onClose(Sender: TObject; var Action: TCloseAction);
     procedure Button2Click(Sender: TObject);
+    procedure onShow(Sender: TObject);
+    procedure clicCongelar(Sender: TObject);
+    procedure onCelCredito(Column: TColumn);
 
   private
     { Private declarations }
@@ -32,7 +34,7 @@ var
 implementation
 
 {$R *.dfm}
-uses MenuGerente;
+uses MenuGerente, DataAccesModule;
 
 
 
@@ -42,10 +44,34 @@ begin
   FormMenuGestionarCuentas.Visible := False;
 end;
 
+procedure TFormMenuGestionarCuentas.clicCongelar(Sender: TObject);
+begin
+  showmessage(DBGridCuentasCredito.Fields[0].AsString);
+ //Holaaa
+end;
+
+procedure TFormMenuGestionarCuentas.onCelCredito(
+  Column: TColumn);
+begin
+  showmessage(DBGridCuentasCredito.Fields[0].AsString);
+end;
+
 procedure TFormMenuGestionarCuentas.onClose(Sender: TObject;
   var Action: TCloseAction);
 begin
 Application.Terminate;
+end;
+
+procedure TFormMenuGestionarCuentas.onShow(Sender: TObject);
+begin
+  with DataAccesModule_.CuentadebitoTable do
+  begin
+    Close;
+    Prepare;
+    Open;
+    Refresh;
+  end;
+
 end;
 
 end.

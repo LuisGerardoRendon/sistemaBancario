@@ -97,7 +97,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="DataAccesModule.pas">
-            <Form>DataModule1</Form>
+            <Form>DataAccesModule_</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -152,6 +152,22 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="UnitUsuario.pas"/>
+        <DCCReference Include="GestionarCuentasCredito.pas">
+            <Form>FormGestionarCuentasCredito</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="GestionarCuentasDebito.pas">
+            <Form>FormCuestionarCuentasDebito</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="GestionarCuentaCredito.pas">
+            <Form>FormGestionarCuenta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="GestionarCuentaDebito.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="ElegirCuenta.pas">
             <Form>FormElegirCuenta</Form>
             <FormType>dfm</FormType>

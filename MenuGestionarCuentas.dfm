@@ -12,6 +12,7 @@ object FormMenuGestionarCuentas: TFormMenuGestionarCuentas
   Font.Style = []
   OldCreateOrder = False
   OnClose = onClose
+  OnShow = onShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -53,53 +54,66 @@ object FormMenuGestionarCuentas: TFormMenuGestionarCuentas
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object DBGrid1: TDBGrid
-    Left = 8
+  object Label4: TLabel
+    Left = 472
+    Top = 80
+    Width = 342
+    Height = 29
+    Caption = 'Selecciona la cuenta a gestionar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object DBGridCuentasCredito: TDBGrid
+    Left = 48
     Top = 144
-    Width = 609
+    Width = 537
     Height = 345
+    DataSource = DataAccesModule_.dsCuentaCredito
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
+    TitleFont.Height = -19
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = onCelCredito
   end
-  object DBGrid2: TDBGrid
-    Left = 663
+  object DBGridCuentasDebito: TDBGrid
+    Left = 759
     Top = 144
-    Width = 609
+    Width = 442
     Height = 345
+    DataSource = DataAccesModule_.dsCuentaDebito
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
+    TitleFont.Height = -19
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-  end
-  object Button1: TButton
-    Left = 424
-    Top = 544
-    Width = 193
-    Height = 49
-    Caption = 'Congelar'
-    TabOrder = 2
+    OnCellClick = onCelCredito
   end
   object Button2: TButton
-    Left = 24
-    Top = 648
+    Left = 528
+    Top = 576
     Width = 193
     Height = 49
     Caption = 'Atr'#225's'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 663
-    Top = 544
-    Width = 193
-    Height = 49
-    Caption = 'Ver estado de cuenta'
-    TabOrder = 4
   end
 end
