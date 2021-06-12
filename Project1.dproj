@@ -105,10 +105,6 @@
             <Form>FormMenuCliente</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="MenuCajero.pas">
-            <Form>FormMenuCajero</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="BuscarCliente.pas">
             <Form>FormBuscarCliente</Form>
             <FormType>dfm</FormType>
@@ -143,20 +139,16 @@
         </DCCReference>
         <DCCReference Include="EstadoCuentaCredito.pas">
             <Form>FormEstadoCuentaCredito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="EstadoCuentaDebito.pas">
             <Form>FormEstadoCuentaDebito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="DataModuleAldo.pas">
             <Form>DataModuleAldoBD</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="DataModuleDani.pas">
             <Form>DataModuleDaniBD</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="UnitUsuario.pas"/>
@@ -176,6 +168,12 @@
             <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="ElegirCuenta.pas">
+            <Form>FormElegirCuenta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnitCuentaDebito.pas"/>
+        <DCCReference Include="UnitCuentaCredito.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
