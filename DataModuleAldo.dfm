@@ -103,9 +103,17 @@ object DataModuleAldoBD: TDataModuleAldoBD
   object MovimientoTable: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
-      'SELECT * FROM banco_database.movimiento')
+      'SELECT * FROM banco_database.movimiento'
+      'WHERE id_cuenta_movimiento = :id_cuenta_debito')
     Left = 147
     Top = 280
+    ParamData = <
+      item
+        Name = 'ID_CUENTA_DEBITO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
   end
   object dsMovimientos: TDataSource
     DataSet = MovimientoTable
