@@ -12,6 +12,7 @@ object FormGestionarCuentasCredito: TFormGestionarCuentasCredito
   Font.Style = []
   OldCreateOrder = False
   OnClose = onClose
+  OnShow = onShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel

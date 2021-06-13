@@ -19,6 +19,10 @@ type
     dsCuentaCredito: TDataSource;
     dsCuentaDebito: TDataSource;
     actualizarEstadoCuenta: TFDQuery;
+    updateCuentaDebito: TFDTable;
+    getIdCuentaDebitoConNumeroCuenta: TFDQuery;
+    updateCuentaCredito: TFDTable;
+    getIdCuentaCreditoNumeroCuenta: TFDQuery;
   private
     { Private declarations }
   public

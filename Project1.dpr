@@ -21,7 +21,7 @@ uses
   GestionarCuentasCredito in 'GestionarCuentasCredito.pas' {FormGestionarCuentasCredito},
   GestionarCuentasDebito in 'GestionarCuentasDebito.pas' {FormCuestionarCuentasDebito},
   GestionarCuentaCredito in 'GestionarCuentaCredito.pas' {FormGestionarCuenta},
-  GestionarCuentaDebito in 'GestionarCuentaDebito.pas' {Form1},
+  GestionarCuentaDebito in 'GestionarCuentaDebito.pas' {FormGestionarCuentaDebito},
   ElegirCuenta in 'ElegirCuenta.pas' {FormElegirCuenta},
   UnitCuentaDebito in 'UnitCuentaDebito.pas',
   UnitCuentaCredito in 'UnitCuentaCredito.pas';
@@ -49,7 +49,7 @@ begin
   Application.CreateForm(TFormGestionarCuentasCredito, FormGestionarCuentasCredito);
   Application.CreateForm(TFormCuestionarCuentasDebito, FormCuestionarCuentasDebito);
   Application.CreateForm(TFormGestionarCuenta, FormGestionarCuenta);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormGestionarCuentaDebito, FormGestionarCuentaDebito);
   Application.CreateForm(TFormElegirCuenta, FormElegirCuenta);
   Application.Run;
 end.

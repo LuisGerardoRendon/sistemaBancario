@@ -12,6 +12,7 @@ object FormCuestionarCuentasDebito: TFormCuestionarCuentasDebito
   Font.Style = []
   OldCreateOrder = False
   OnClose = onClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label3: TLabel

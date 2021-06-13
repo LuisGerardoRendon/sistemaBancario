@@ -12,11 +12,49 @@ uses System.SysUtils, System.Variants,
     idClienteCuenta : integer;
     idCuentaCredito : integer;
     numeroDeCuenta : string;
+    procedure actualizarEstado(estado: string; numeroCuenta: string);
+    function obtenerId(numeroCuenta: string): integer;
 
   end;
   var
   cuentaCredito: TCuentaCredito;
 
 implementation
+
+uses DataAccesModule;
+{ TCuentaCredito }
+
+procedure TCuentaCredito.actualizarEstado(estado: string; numeroCuenta:string);
+begin
+  obtenerId(numeroCuenta);
+with DataAccesModule.DataAccesModule_.updateCuentaCredito do
+  begin
+    Open;
+    Refresh;
+    if FindKey([idCuentaCredito]) then
+    begin
+      Edit;
+      FieldByName('estadoCuenta').AsString := estado;
+      Post;
+    end;
+  end;
+end;
+
+function TCuentaCredito.obtenerId(numeroCuenta: string): integer;
+begin
+  with DataAccesModule_. do
+  begin
+  Prepare;
+  ParamByName('numeroDeCuenta').AsString:= numeroDeCuenta;
+  Open;
+  Refresh;
+  First;
+  while not EOF do
+    begin
+     idCuentaCredito := FieldByName('id_cuenta_debito').AsInteger;
+     Next;
+    end;
+  end;
+end;
 
 end.

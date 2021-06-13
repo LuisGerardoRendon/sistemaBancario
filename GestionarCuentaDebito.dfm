@@ -1,4 +1,4 @@
-﻿object Form1: TForm1
+﻿object FormGestionarCuentaDebito: TFormGestionarCuentaDebito
   Left = 0
   Top = 0
   Caption = 'FormGestionarCuentaDebito'
@@ -12,6 +12,7 @@
   Font.Style = []
   OldCreateOrder = False
   OnClose = onClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -35,6 +36,7 @@
     Height = 41
     Caption = 'Cerrar cuenta'
     TabOrder = 0
+    OnClick = clicCerrarCuenta
   end
   object Button1: TButton
     Left = 168
@@ -43,6 +45,7 @@
     Height = 42
     Caption = 'Congelar'
     TabOrder = 1
+    OnClick = clicCongelarCuenta
   end
   object Button2: TButton
     Left = 327
@@ -51,6 +54,7 @@
     Height = 42
     Caption = 'Ver estado de cuenta'
     TabOrder = 2
+    OnClick = verEstadodeCuenta
   end
   object Atrás: TButton
     Left = 208
@@ -59,5 +63,6 @@
     Height = 25
     Caption = 'Cancelar'
     TabOrder = 3
+    OnClick = clicCancelar
   end
 end
