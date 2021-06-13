@@ -32,8 +32,8 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     ExplicitWidth = 199
   end
   object LabelSaldo: TLabel
-    Left = 303
-    Top = 227
+    Left = 311
+    Top = 259
     Width = 39
     Height = 19
     Caption = 'Saldo'
@@ -45,8 +45,8 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     ParentFont = False
   end
   object LabelEstadoDeCuenta: TLabel
-    Left = 295
-    Top = 272
+    Left = 311
+    Top = 296
     Width = 47
     Height = 19
     Caption = 'Estado'
@@ -57,20 +57,51 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
   end
-  object Panel1: TPanel
+  object Label2: TLabel
     Left = 0
     Top = 18
+    Width = 672
+    Height = 18
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Cliente: '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitWidth = 52
+  end
+  object LabelNombreCliente: TLabel
+    Left = 0
+    Top = 36
+    Width = 672
+    Height = 18
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Nombre'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitWidth = 52
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 54
     Width = 672
     Height = 41
     Align = alTop
     Caption = 'MOVIMIENTOS'
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 135
+    ExplicitTop = 74
   end
   object Panel2: TPanel
-    Left = 232
-    Top = 180
+    Left = 240
+    Top = 212
     Width = 185
     Height = 41
     Caption = 'SALDO'
@@ -84,7 +115,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 59
+    Top = 95
     Width = 672
     Height = 120
     Align = alTop
@@ -95,5 +126,14 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object ButtonRegresar: TButton
+    Left = 544
+    Top = 290
+    Width = 75
+    Height = 25
+    Caption = 'Regresar'
+    TabOrder = 3
+    OnClick = ButtonRegresarClick
   end
 end
