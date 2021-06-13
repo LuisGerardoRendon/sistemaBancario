@@ -53,6 +53,7 @@ begin
     ParamByName('correoElectronico').AsString:= txtCorreoElectronico.Text;
     ParamByName('contrasenia').AsString:= txtContrasenia.Text;
     Open;
+    Refresh;
     First;
     while not EOF do
     begin

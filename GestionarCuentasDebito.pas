@@ -16,17 +16,19 @@ type
     procedure clicCuentaDebito(Column: TColumn);
     procedure onClose(Sender: TObject; var Action: TCloseAction);
     procedure clicAtras(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    numeroDeCuenta:string;
   end;
 
 var
   FormCuestionarCuentasDebito: TFormCuestionarCuentasDebito;
 
 implementation
-uses MenuGerente;
+uses MenuGerente, GestionarCuentaDebito, DataAccesModule;
 {$R *.dfm}
 
 procedure TFormCuestionarCuentasDebito.clicAtras(Sender: TObject);
@@ -37,7 +39,17 @@ end;
 
 procedure TFormCuestionarCuentasDebito.clicCuentaDebito(Column: TColumn);
 begin
+numeroDeCuenta := DBGridCuentasDebito.Fields[0].AsString;
+
+FormCuestionarCuentasDebito.Visible:= False;
+GestionarCuentaDebito.FormGestionarCuentaDebito.Show;
 //fgg
+end;
+
+procedure TFormCuestionarCuentasDebito.FormShow(Sender: TObject);
+begin
+ DataAccesModule.DataAccesModule_.CuentaDebitoTable.Active:= True;
+ DataAccesModule.DataAccesModule_.CuentaDebitoTable.Refresh;
 end;
 
 procedure TFormCuestionarCuentasDebito.onClose(Sender: TObject;
