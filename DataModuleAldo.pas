@@ -15,6 +15,14 @@ type
     Banco_databaseConnection: TFDConnection;
     CuentaCreditoTable: TFDQuery;
     CuentaDebitoTable: TFDQuery;
+    CuentainteresesTable: TFDQuery;
+    dsIntereses: TDataSource;
+    PagoTable: TFDQuery;
+    dspagos: TDataSource;
+    RecargoTable: TFDQuery;
+    dsRecargos: TDataSource;
+    MovimientoTable: TFDQuery;
+    dsMovimientos: TDataSource;
 
   private
     { Private declarations }

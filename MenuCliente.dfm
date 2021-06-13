@@ -16,7 +16,7 @@ object FormMenuCliente: TFormMenuCliente
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 48
+    Left = 96
     Top = 24
     Width = 116
     Height = 16
@@ -29,7 +29,7 @@ object FormMenuCliente: TFormMenuCliente
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 184
+    Left = 236
     Top = 24
     Width = 45
     Height = 16
@@ -40,34 +40,6 @@ object FormMenuCliente: TFormMenuCliente
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-  end
-  object Label3: TLabel
-    Left = 72
-    Top = 272
-    Width = 39
-    Height = 13
-    Caption = 'Credito:'
-  end
-  object Label4: TLabel
-    Left = 133
-    Top = 272
-    Width = 31
-    Height = 13
-    Caption = 'Label4'
-  end
-  object Label5: TLabel
-    Left = 240
-    Top = 272
-    Width = 35
-    Height = 13
-    Caption = 'Debito:'
-  end
-  object Label6: TLabel
-    Left = 288
-    Top = 272
-    Width = 31
-    Height = 13
-    Caption = 'Label6'
   end
   object Button1: TButton
     Left = 96
@@ -80,7 +52,7 @@ object FormMenuCliente: TFormMenuCliente
   end
   object Button2: TButton
     Left = 96
-    Top = 168
+    Top = 192
     Width = 193
     Height = 49
     Caption = 'VER ESTADO DE CUENTA CREDITO'

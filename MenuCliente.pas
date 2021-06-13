@@ -12,10 +12,6 @@ type
     Button2: TButton;
     Label1: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -76,8 +72,7 @@ begin
     cuentaCredito := usuarioCliente.getCuentaCredito;
 
     Label2.Caption := usuarioCliente.nombres;
-    Label4.Caption := cuentaDebito.estadoCuenta;
-    label6.Caption := cuentaCredito.estadoCuenta;
+    
 
 end;
 
