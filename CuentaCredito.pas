@@ -12,15 +12,28 @@ type
     txtDeuda: TEdit;
     txtNombre: TEdit;
     txtMonto: TEdit;
-    Button1: TButton;
+    btnPagar: TButton;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    cbPagarIntereses: TCheckBox;
+    btnAtras: TButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
-    procedure FillTextBoxes;
+    procedure cbPagarInteresesClick(Sender: TObject);
+    procedure btnPagarClick(Sender: TObject);
+    procedure btnAtrasClick(Sender: TObject);
   private
-    { Private declarations }
+    pagosFaltantes : integer;
+    monto : integer;
+    intereses : Currency;
+    pagarIntereses : boolean;
+    currentDate : TDateTime;
+    procedure FillTextBoxes;
+    procedure setVariables;
+    procedure CreatePago;
+    procedure updateCuentaCredito;
+    procedure pagarCuentaIntereses;
   public
     usuario : TUsuario;
     cuentaCredito : TCuentaCredito;
@@ -32,27 +45,135 @@ var
 implementation
 
 {$R *.dfm}
-uses ElegirCuenta;
+uses ElegirCuenta, DataModuleDani;
 
 procedure TFormCuentaCredito.FormShow(Sender: TObject);
 begin
   usuario := ElegirCuenta.FormElegirCuenta.usuario;
   cuentaCredito := ElegirCuenta.FormElegirCuenta.cuentaCredito;
-
+  setVariables;
   FillTextBoxes;
+end;
+
+procedure TFormCuentaCredito.btnPagarClick(Sender: TObject);
+begin
+  currentDate := Now;
+  begin
+    CreatePago;
+    updateCuentaCredito;
+    pagarCuentaIntereses;
+    showmessage('El pago se realizó con éxito');
+    elegirCuenta.FormElegirCuenta.cuentaCredito :=  cuentaCredito;
+    cbPagarIntereses.Checked := false;
+    FormCuentaCredito.Visible := False;
+    FormElegirCuenta.Show;
+  end;
+end;
+
+procedure TFormCuentaCredito.cbPagarInteresesClick(Sender: TObject);
+begin
+  if cbPagarIntereses.Checked then
+  begin
+    if intereses > 0 then
+    begin
+      txtMonto.Text := CurrToStrF((monto + intereses), ffCurrency, 2);
+      pagarIntereses := true;
+    end
+    Else
+    begin
+      showmessage('Esta cuenta no tiene intereses');
+      cbPagarIntereses.Checked := false;
+      pagarIntereses := false;
+    end;
+  end
+  Else
+  begin
+    txtMonto.Text := Inttostr(monto);
+  end;
+end;
+
+procedure TFormCuentaCredito.CreatePago;
+begin
+  with DataModuleDaniBD.createPago do
+  begin
+    Open;
+    Refresh;
+    Insert;
+    FieldByName('fecha').AsDateTime := currentDate;
+    FieldByName('monto').AsInteger := monto;
+    FieldByName('idCuentaCredito').AsInteger := cuentaCredito.idCuentaCredito;
+    Post;
+  end;
+end;
+
+procedure TFormCuentaCredito.updateCuentaCredito;
+begin
+  cuentaCredito.deudaTotal := cuentaCredito.deudaTotal - monto;
+  with DataModuleDaniBD.CRUDCuentaCredito do
+  begin
+  Open;
+  Refresh;
+  if FindKey([cuentaCredito.idCuentaCredito]) then
+  begin
+    Edit;
+    FieldByName('deudaTotal').asCurrency := cuentaCredito.deudaTotal;
+    Post;
+  end;
+  end;
+end;
+
+procedure TFormCuentaCredito.pagarCuentaIntereses;
+begin
+  if pagarIntereses then
+  begin
+    with DataModuleDaniBD.CRUDCuentaIntereses do
+    begin
+      Open;
+      Refresh;
+      if FindKey([cuentaCredito.idCuentaCredito]) then
+      begin
+        Edit;
+        FieldByName('totalInteresesAcumulados').AsCurrency := 0.0;
+        Post;
+      end;
+    end;
+  end;
+end;
+
+procedure TFormCuentaCredito.setVariables;
+begin
+  monto := 0;
+  pagosFaltantes := 12 - cuentaCredito.getPagos;
+  if pagosFaltantes > 0 then
+  begin
+    monto := Round(cuentaCredito.deudaTotal / pagosFaltantes);
+    intereses := cuentaCredito.getIntereses;
+  end
+  else
+  begin
+    btnPagar.Hide;
+  end;
 end;
 
 procedure TFormCuentaCredito.FillTextBoxes;
 begin
+  txtMonto.Clear;
   txtNombre.Text := usuario.getNombreCompleto;
-  txtDeuda.Text := inttostr (cuentaCredito.deudaTotal);
+  txtDeuda.Text := CurrToStrF(cuentaCredito.deudaTotal, ffCurrency, 2);
+  txtMonto.Text := Inttostr(monto);
+end;
+
+procedure TFormCuentaCredito.btnAtrasClick(Sender: TObject);
+begin
+  elegirCuenta.FormElegirCuenta.cuentaCredito :=  cuentaCredito;
+  cbPagarIntereses.Checked := false;
+  FormCuentaCredito.Visible := False;
+  FormElegirCuenta.Show;
 end;
 
 procedure TFormCuentaCredito.FormClose(Sender: TObject;
   var Action: TCloseAction);
 begin
-  FormCuentaCredito.Visible := False;
-  FormElegirCuenta.Show;
+  Application.Terminate;
 end;
-
 end.

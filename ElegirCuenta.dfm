@@ -54,4 +54,13 @@ object FormElegirCuenta: TFormElegirCuenta
     ReadOnly = True
     TabOrder = 2
   end
+  object btnAtras: TButton
+    Left = 8
+    Top = 317
+    Width = 57
+    Height = 25
+    Caption = 'Atras'
+    TabOrder = 3
+    OnClick = btnAtrasClick
+  end
 end

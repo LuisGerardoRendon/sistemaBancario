@@ -28,7 +28,7 @@ object FormBuscarCliente: TFormBuscarCliente
     Width = 292
     Height = 21
     TabOrder = 0
-    TextHint = 'Cadena de 10 d'#237'gitos'
+    TextHint = 'Cadena de 12 d'#237'gitos'
   end
   object btnBuscar: TButton
     Left = 306
