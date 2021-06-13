@@ -16,6 +16,8 @@ type
     procedure clicCuenta(Column: TColumn);
     procedure onClose(Sender: TObject; var Action: TCloseAction);
     procedure clicAtras(Sender: TObject);
+    procedure onShow(Sender: TObject);
+    procedure cargarDatos(Sender: TObject);
 
   private
     { Private declarations }
@@ -29,9 +31,14 @@ var
 
 
 implementation
-uses MenuGerente, GestionarCuentaCredito;
+uses MenuGerente, GestionarCuentaCredito, DataAccesModule;
 
 {$R *.dfm}
+
+procedure TFormGestionarCuentasCredito.cargarDatos(Sender: TObject);
+begin
+  DataAccesModule.DataAccesModule_.CuentadebitoTable.Active:= True;
+end;
 
 procedure TFormGestionarCuentasCredito.clicAtras(Sender: TObject);
 begin
@@ -54,6 +61,11 @@ procedure TFormGestionarCuentasCredito.onClose(Sender: TObject;
   var Action: TCloseAction);
 begin
 Application.Terminate;
+end;
+
+procedure TFormGestionarCuentasCredito.onShow(Sender: TObject);
+begin
+DataAccesModule.DataAccesModule_.CuentaCreditoTable.Active:= True;
 end;
 
 end.

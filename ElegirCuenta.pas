@@ -13,11 +13,13 @@ type
     btnVerCuentaCredito: TButton;
     Label1: TLabel;
     txtNombre: TEdit;
+    btnAtras: TButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure changeButtonVisibility();
     procedure btnVerCuentaDebitoClick(Sender: TObject);
     procedure btnVerCuentaCreditoClick(Sender: TObject);
+    procedure btnAtrasClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +58,12 @@ begin
   begin
     btnVerCuentaCredito.Hide;
   end;
+end;
+
+procedure TFormElegirCuenta.btnAtrasClick(Sender: TObject);
+begin
+  FormElegirCuenta.Visible := false;
+  FormBuscarCliente.Show;
 end;
 
 procedure TFormElegirCuenta.btnVerCuentaCreditoClick(Sender: TObject);

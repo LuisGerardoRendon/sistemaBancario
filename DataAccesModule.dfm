@@ -34,7 +34,6 @@ object DataAccesModule_: TDataAccesModule_
       end>
   end
   object CuentadebitoTable: TFDQuery
-    Active = True
     Connection = Banco_databaseConnection
     SQL.Strings = (
       
@@ -43,13 +42,12 @@ object DataAccesModule_: TDataAccesModule_
       'FROM cuentaDebito'
       
         '         INNER JOIN movimiento ON cuentaDebito.id_cuenta_debito ' +
-        '= movimiento.id_cuenta_movimiento'
-      'GROUP BY id_cuenta_debito ORDER BY NumeroDeMovimientos DESC')
+        '= movimiento.id_cuenta_movimiento WHERE estadoCuenta = '#39'activa'#39
+      'GROUP BY id_cuenta_debito ORDER BY NumeroDeMovimientos DESC ;')
     Left = 217
     Top = 328
   end
   object CuentacreditoTable: TFDQuery
-    Active = True
     Connection = Banco_databaseConnection
     SQL.Strings = (
       
@@ -85,6 +83,50 @@ object DataAccesModule_: TDataAccesModule_
         ParamType = ptInput
         Value = Null
       end
+      item
+        Name = 'NUMERODECUENTA'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object updateCuentaDebito: TFDTable
+    Connection = Banco_databaseConnection
+    UpdateOptions.UpdateTableName = 'banco_database.cuentaDebito'
+    TableName = 'banco_database.cuentaDebito'
+    Left = 568
+    Top = 432
+  end
+  object getIdCuentaDebitoConNumeroCuenta: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      'SELECT id_cuenta_debito FROM banco_database.cuentaDebito '
+      'WHERE numeroDeCuenta = :numeroDeCuenta;')
+    Left = 695
+    Top = 236
+    ParamData = <
+      item
+        Name = 'NUMERODECUENTA'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object updateCuentaCredito: TFDTable
+    Connection = Banco_databaseConnection
+    UpdateOptions.UpdateTableName = 'banco_database.cuentaCredito'
+    TableName = 'banco_database.cuentaCredito'
+    Left = 184
+    Top = 456
+  end
+  object getIdCuentaCreditoNumeroCuenta: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      'SELECT id_cuenta_credito FROM banco_database.cuentaCredito'
+      'WHERE numeroDeCuenta = :numeroDeCuenta;')
+    Left = 120
+    Top = 259
+    ParamData = <
       item
         Name = 'NUMERODECUENTA'
         DataType = ftString

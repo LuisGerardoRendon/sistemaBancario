@@ -65,14 +65,34 @@ object FormCuentaCredito: TFormCuentaCredito
     Top = 86
     Width = 169
     Height = 21
+    ReadOnly = True
     TabOrder = 2
   end
-  object Button1: TButton
+  object btnPagar: TButton
     Left = 272
     Top = 312
     Width = 107
     Height = 25
     Caption = 'Pagar mensualidad'
     TabOrder = 3
+    OnClick = btnPagarClick
+  end
+  object cbPagarIntereses: TCheckBox
+    Left = 232
+    Top = 113
+    Width = 97
+    Height = 17
+    Caption = 'Pagar intereses'
+    TabOrder = 4
+    OnClick = cbPagarInteresesClick
+  end
+  object btnAtras: TButton
+    Left = 16
+    Top = 312
+    Width = 57
+    Height = 25
+    Caption = 'Atras'
+    TabOrder = 5
+    OnClick = btnAtrasClick
   end
 end

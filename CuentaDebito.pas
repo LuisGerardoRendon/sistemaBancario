@@ -19,15 +19,20 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    btnAtras: TButton;
     procedure FormShow(Sender: TObject);
     procedure FillTextBoxes;
     procedure btnRetirarClick(Sender: TObject);
     function validarMonto () : boolean;
     procedure btnAbonarClick(Sender: TObject);
     procedure updateTextBoxes;
+    procedure crearMovimiento (tipoMovimiento : string);
+    procedure btnAtrasClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     monto : integer;
+    currentDate : TDateTime;
+    procedure updateSaldo;
   public
     usuario : TUsuario;
     cuentaDebito : TCuentaDebito;
@@ -52,15 +57,8 @@ procedure TFormCuentaDebito.btnAbonarClick(Sender: TObject);
 begin
   monto := Strtoint(txtMonto.Text);
   cuentaDebito.saldo := cuentaDebito.saldo + monto;
-  with DataModuleDaniBD.updateSaldoCuenta do
-  begin
-    Open;
-    if FindKey([cuentaDebito.idCuentaDebito]) then
-    Edit;
-    FieldByName('saldo').AsCurrency := cuentaDebito.saldo;
-    Post;
-  end;
-  updateTextBoxes;
+  updateSaldo;
+  crearMovimiento('abono');
 end;
 
 procedure TFormCuentaDebito.btnRetirarClick(Sender: TObject);
@@ -69,17 +67,27 @@ begin
   if validarMonto then
   begin
     cuentaDebito.saldo := cuentaDebito.saldo - monto;
-    with DataModuleDaniBD.updateSaldoCuenta do
-    begin
-      if FindKey([cuentaDebito.idCuentaDebito]) then
-      Edit;
-      FieldByName('saldo').AsCurrency := cuentaDebito.saldo;
-      Post;
-    end;
+    updateSaldo;
   end
   Else
   begin
     showmessage('La cantidad que se desea retirar es mayor que el saldo');
+  end;
+  crearMovimiento('retiro');
+end;
+
+procedure TFormCuentaDebito.updateSaldo;
+begin
+  with DataModuleDaniBD.updateSaldoCuenta do
+  begin
+    Open;
+    Refresh;
+    if FindKey([cuentaDebito.idCuentaDebito]) then
+    begin
+      Edit;
+      FieldByName('saldo').AsCurrency := cuentaDebito.saldo;
+      Post;
+    end;
   end;
   updateTextBoxes;
 end;
@@ -109,12 +117,33 @@ begin
   end;
 end;
 
-procedure TFormCuentaDebito.FormClose(Sender: TObject;
-  var Action: TCloseAction);
+procedure TFormCuentaDebito.crearMovimiento(tipoMovimiento: string);
+begin
+  currentDate := Now;
+  with DataModuleDaniBD.createMovimiento do
+  begin
+    Open;
+    Refresh;
+    Insert;
+    FieldByName('tipo_movimiento').AsString := tipoMovimiento;
+    FieldByName('monto').AsCurrency := monto;
+    FieldByName('id_cuenta_movimiento').AsInteger := cuentaDebito.idCuentaDebito;
+    FieldByName('fecha').AsDateTime := currentDate;
+    Post;
+  end;
+  showmessage('El '+tipoMovimiento+' se realizó con éxito');
+end;
+
+procedure TFormCuentaDebito.btnAtrasClick(Sender: TObject);
 begin
   elegirCuenta.FormElegirCuenta.cuentaDebito := cuentaDebito;
   FormCuentaDebito.Visible := False;
   FormElegirCuenta.Show;
 end;
 
+procedure TFormCuentaDebito.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Application.Terminate;
+end;
 end.

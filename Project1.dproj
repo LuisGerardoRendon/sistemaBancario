@@ -131,16 +131,20 @@
         </DCCReference>
         <DCCReference Include="EstadoCuentaCredito.pas">
             <Form>FormEstadoCuentaCredito</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="EstadoCuentaDebito.pas">
             <Form>FormEstadoCuentaDebito</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="DataModuleAldo.pas">
             <Form>DataModuleAldoBD</Form>
+            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="DataModuleDani.pas">
             <Form>DataModuleDaniBD</Form>
+            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="UnitUsuario.pas"/>
@@ -154,7 +158,8 @@
             <Form>FormGestionarCuenta</Form>
         </DCCReference>
         <DCCReference Include="GestionarCuentaDebito.pas">
-            <Form>Form1</Form>
+            <Form>FormGestionarCuentaDebito</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ElegirCuenta.pas">
             <Form>FormElegirCuenta</Form>

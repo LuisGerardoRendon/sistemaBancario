@@ -29,7 +29,7 @@ uses System.SysUtils, System.Variants,
 
 implementation
 
-uses DataModuleDani;
+uses DataModuleDani, FireDAC.Stan.Param;
 
 function TUsuario.getCuentaCredito : TCuentaCredito;
 begin
@@ -39,11 +39,12 @@ begin
     Prepare;
     ParamByName('idUsuario').AsInteger := idUsuario;
     Open;
+    Refresh;
     First;
     while not EOF do
     begin
       cuentaCredito.estadoCuenta := FieldByName('estadoCuenta').AsString;
-      cuentaCredito.deudaTotal := FieldByName('deudaTotal').AsInteger;
+      cuentaCredito.deudaTotal := FieldByName('deudaTotal').AsCurrency;
       cuentaCredito.idClienteCuenta := FieldByName('id_cliente_cuenta').AsInteger;
       cuentaCredito.idCuentaCredito := FieldByName('id_cuenta_credito').AsInteger;
       cuentaCredito.numeroDeCuenta := FieldByName('numeroDeCuenta').AsString;
@@ -62,6 +63,7 @@ begin
     Prepare;
     ParamByName('idUsuario').AsInteger := idUsuario;
     Open;
+    Refresh;
     First;
     while not EOF do
     begin
