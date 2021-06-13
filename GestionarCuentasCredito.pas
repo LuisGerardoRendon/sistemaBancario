@@ -67,6 +67,7 @@ end;
 procedure TFormGestionarCuentasCredito.onShow(Sender: TObject);
 begin
 DataAccesModule.DataAccesModule_.CuentaCreditoTable.Active:= True;
+DataAccesModule.DataAccesModule_.CuentaCreditoTable.Refresh;
 end;
 
 end.

@@ -38,7 +38,9 @@ uses MenuGerente, GestionarCuentasCredito;
 procedure TFormGestionarCuenta.cerrrarCuentaClic(Sender: TObject);
 begin
 //Cerrar cuenta
-cuentaCredito.actualizarEstado('cerrada', numeroDeCuenta);
+
+cuentaCredito.actualizarEstado('cerrada');
+showmessage(cuentaCredito.numeroDeCuenta);
 end;
 
 procedure TFormGestionarCuenta.clicAtras(Sender: TObject);
@@ -49,8 +51,9 @@ end;
 
 procedure TFormGestionarCuenta.clicCongelar(Sender: TObject);
 begin
-cuentaCredito.actualizarEstado('congelada', numeroDeCuenta);
+cuentaCredito.actualizarEstado('congelada');
 showmessage(inttostr(cuentaCredito.idCuentaCredito));
+showmessage(cuentaCredito.numeroDeCuenta);
 end;
 
 procedure TFormGestionarCuenta.onClose(Sender: TObject;
@@ -65,6 +68,7 @@ begin
 numeroDeCuenta := GestionarCuentasCredito.FormGestionarCuentasCredito.numeroDeCuenta;
 labelNumeroCuenta.Caption := numeroDeCuenta;
 cuentaCredito := TCuentaCredito.Create;
+cuentaCredito.numeroDeCuenta := numeroDeCuenta;
 end;
 
 end.

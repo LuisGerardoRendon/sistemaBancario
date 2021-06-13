@@ -50,12 +50,15 @@ object DataAccesModule_: TDataAccesModule_
   object CuentacreditoTable: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
-      
-        'SELECT cuentaC.numeroDeCuenta AS NumeroDeCuenta, cuentaC.deudaTo' +
-        'tal AS DeudaTotal, cuentaI.totalInteresesAcumulados AS TotalCuen' +
-        'taIntereses FROM banco_database.cuentaCredito cuentaC INNER JOIN' +
-        ' cuentaIntereses cuentaI ON cuentaC.id_cuenta_credito = cuentaI.' +
-        'idCuentaCredito order by  cuentaI.totalInteresesAcumulados DESC;')
+      'SELECT cuentaC.numeroDeCuenta AS NumeroDeCuenta,'
+      ' cuentaC.deudaTotal AS DeudaTotal,'
+      ' cuentaI.totalInteresesAcumulados'
+      ' AS TotalCuentaIntereses'
+      ' FROM banco_database.cuentaCredito cuentaC'
+      ' INNER JOIN cuentaIntereses cuentaI ON'
+      ' cuentaC.id_cuenta_credito = cuentaI.idCuentaCredito'
+      ' WHERE estadoCuenta = '#39'activa'#39
+      ' order by  cuentaI.totalInteresesAcumulados DESC;')
     Left = 622
     Top = 359
   end

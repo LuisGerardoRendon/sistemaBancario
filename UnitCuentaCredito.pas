@@ -12,7 +12,7 @@ uses System.SysUtils, System.Variants,
     idClienteCuenta : integer;
     idCuentaCredito : integer;
     numeroDeCuenta : string;
-    procedure actualizarEstado(estado: string; numeroCuenta: string);
+    procedure actualizarEstado(estado: string);
     procedure obtenerId(numeroCuenta: string);
     function getPagos : integer;
     function getIntereses : Currency;
@@ -28,9 +28,9 @@ implementation
 uses DataAccesModule, FireDAC.Stan.Param, DataModuleDani;
 { TCuentaCredito }
 
-procedure TCuentaCredito.actualizarEstado(estado: string; numeroCuenta:string);
+procedure TCuentaCredito.actualizarEstado(estado: string);
 begin
-  obtenerId(numeroCuenta);
+  obtenerId(numeroDeCuenta);
 with DataAccesModule.DataAccesModule_.updateCuentaCredito do
   begin
     Open;
