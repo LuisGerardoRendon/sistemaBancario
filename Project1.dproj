@@ -107,35 +107,27 @@
         </DCCReference>
         <DCCReference Include="BuscarCliente.pas">
             <Form>FormBuscarCliente</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="CuentaDebito.pas">
             <Form>FormCuentaDebito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="CuentaCredito.pas">
             <Form>FormCuentaCredito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="MenuGerente.pas">
             <Form>FormMenuGerente</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="InformacionCliente.pas">
             <Form>FormInformacionCliente</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="MenuGestionarCuentas.pas">
             <Form>FormMenuGestionarCuentas</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="MenuInteresesRecargos.pas">
             <Form>FormMenuInteresesRecargos</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="RegistrarCliente.pas">
             <Form>FormRegistrarCliente</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="EstadoCuentaCredito.pas">
             <Form>FormEstadoCuentaCredito</Form>
@@ -154,23 +146,18 @@
         <DCCReference Include="UnitUsuario.pas"/>
         <DCCReference Include="GestionarCuentasCredito.pas">
             <Form>FormGestionarCuentasCredito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GestionarCuentasDebito.pas">
             <Form>FormCuestionarCuentasDebito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GestionarCuentaCredito.pas">
             <Form>FormGestionarCuenta</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GestionarCuentaDebito.pas">
             <Form>Form1</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ElegirCuenta.pas">
             <Form>FormElegirCuenta</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UnitCuentaDebito.pas"/>
         <DCCReference Include="UnitCuentaCredito.pas"/>

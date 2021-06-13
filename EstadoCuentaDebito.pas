@@ -14,6 +14,7 @@ type
     Panel1: TPanel;
     ListBox1: TListBox;
     Panel2: TPanel;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -26,5 +27,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFormEstadoCuentaDebito.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    Application.Terminate;
+end;
 
 end.
