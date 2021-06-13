@@ -13,7 +13,7 @@ uses System.SysUtils, System.Variants,
     idCuentaCredito : integer;
     numeroDeCuenta : string;
     procedure actualizarEstado(estado: string; numeroCuenta: string);
-    function obtenerId(numeroCuenta: string): integer;
+    procedure obtenerId(numeroCuenta: string);
 
   end;
   var
@@ -21,7 +21,7 @@ uses System.SysUtils, System.Variants,
 
 implementation
 
-uses DataAccesModule;
+uses DataAccesModule, FireDAC.Stan.Param;
 { TCuentaCredito }
 
 procedure TCuentaCredito.actualizarEstado(estado: string; numeroCuenta:string);
@@ -40,9 +40,9 @@ with DataAccesModule.DataAccesModule_.updateCuentaCredito do
   end;
 end;
 
-function TCuentaCredito.obtenerId(numeroCuenta: string): integer;
+procedure TCuentaCredito.obtenerId(numeroCuenta: string);
 begin
-  with DataAccesModule_. do
+  with DataAccesModule_.getIdCuentaCreditoNumeroCuenta do
   begin
   Prepare;
   ParamByName('numeroDeCuenta').AsString:= numeroDeCuenta;
@@ -51,7 +51,7 @@ begin
   First;
   while not EOF do
     begin
-     idCuentaCredito := FieldByName('id_cuenta_debito').AsInteger;
+     idCuentaCredito := FieldByName('id_cuenta_credito').AsInteger;
      Next;
     end;
   end;
