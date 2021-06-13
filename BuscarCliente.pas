@@ -47,6 +47,7 @@ begin
     Prepare;
     ParamByName('claveElector').AsString := txtClaveElector.Text;
     Open;
+    Refresh;
     First;
     while not EOF do
     begin

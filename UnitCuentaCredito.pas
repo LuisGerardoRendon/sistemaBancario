@@ -8,20 +8,24 @@ uses System.SysUtils, System.Variants,
   TCuentaCredito = class
   public
     estadoCuenta : string;
-    deudaTotal : integer;
+    deudaTotal : currency;
     idClienteCuenta : integer;
     idCuentaCredito : integer;
     numeroDeCuenta : string;
     procedure actualizarEstado(estado: string; numeroCuenta: string);
     procedure obtenerId(numeroCuenta: string);
+    function getPagos : integer;
+    function getIntereses : Currency;
 
   end;
   var
   cuentaCredito: TCuentaCredito;
+  pagos : integer;
+  intereses : currency;
 
 implementation
 
-uses DataAccesModule, FireDAC.Stan.Param;
+uses DataAccesModule, FireDAC.Stan.Param, DataModuleDani;
 { TCuentaCredito }
 
 procedure TCuentaCredito.actualizarEstado(estado: string; numeroCuenta:string);
@@ -55,6 +59,44 @@ begin
      Next;
     end;
   end;
+
+
+function TCuentaCredito.getIntereses: Currency;
+begin
+  intereses := 0.0;
+  with DataModuleDaniBD.CuentainteresesTable do
+  begin
+    Prepare;
+    ParamByName('idCuentaCredito').AsInteger := idCuentaCredito;
+    Open;
+    Refresh;
+    First;
+    while not EOF do
+    begin
+      intereses := FieldByName('totalInteresesAcumulados').AsCurrency;
+      Next;
+    end;
+  end;
+  Result := intereses;
+end;
+
+function TCuentaCredito.getPagos: integer;
+begin
+  pagos := 0;
+  with DataModuleDaniBD.PagoTable do
+  begin
+    Prepare;
+    ParamByName('idCuentaCredito').AsInteger := idCuentaCredito;
+    Open;
+    Refresh;
+    First;
+    while not EOF do
+    begin
+      pagos := pagos + 1;
+      Next;
+    end;
+  end;
+  Result := pagos;
 end;
 
 end.

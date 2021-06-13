@@ -158,15 +158,12 @@
         <DCCReference Include="UnitUsuario.pas"/>
         <DCCReference Include="GestionarCuentasCredito.pas">
             <Form>FormGestionarCuentasCredito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GestionarCuentasDebito.pas">
             <Form>FormCuestionarCuentasDebito</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GestionarCuentaCredito.pas">
             <Form>FormGestionarCuenta</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="GestionarCuentaDebito.pas">
             <Form>FormGestionarCuentaDebito</Form>
