@@ -4,49 +4,99 @@ interface
 uses System.SysUtils, System.Variants,
   System.Classes, Data.DB;
 
-
   type
   TCuentaCredito = class
   public
     estadoCuenta : string;
-    deudaTotal : integer;
+    deudaTotal : currency;
     idClienteCuenta : integer;
     idCuentaCredito : integer;
     numeroDeCuenta : string;
-    function getCuentaCredito : TCuentaCredito;
-
+    procedure actualizarEstado(estado: string; numeroCuenta: string);
+    procedure obtenerId(numeroCuenta: string);
+    function getPagos : integer;
+    function getIntereses : Currency;
 
   end;
   var
   cuentaCredito: TCuentaCredito;
-
+  pagos : integer;
+  intereses : currency;
 
 implementation
 
-uses DataModuleAldo;
+uses DataAccesModule, FireDAC.Stan.Param, DataModuleDani;
+{ TCuentaCredito }
 
-function TCuentaCredito.getCuentaCredito : TCuentaCredito;
+procedure TCuentaCredito.actualizarEstado(estado: string; numeroCuenta:string);
 begin
-  with DataModuleAldoBD.CuentaCreditoTable do
+  obtenerId(numeroCuenta);
+with DataAccesModule.DataAccesModule_.updateCuentaCredito do
   begin
-    cuentaCredito := TCuentaCredito.Create;
-    Prepare;
-    ParamByName('numeroDeCuenta').AsString := numeroDeCuenta;
     Open;
-    First;
-    while not EOF do
+    Refresh;
+    if FindKey([idCuentaCredito]) then
     begin
-      cuentaCredito.estadoCuenta := FieldByName('estadoCuenta').AsString;
-      cuentaCredito.deudaTotal := FieldByName('deudaTotal').AsInteger;
-      cuentaCredito.idClienteCuenta := FieldByName('id_cliente_cuenta').AsInteger;
-      cuentaCredito.idCuentaCredito := FieldByName('id_cuenta_credito').AsInteger;
-      cuentaCredito.numeroDeCuenta := FieldByName('numeroDeCuenta').AsString;
-      Next;
+      Edit;
+      FieldByName('estadoCuenta').AsString := estado;
+      Post;
     end;
-
-    Result := cuentaCredito;
   end;
 end;
 
+procedure TCuentaCredito.obtenerId(numeroCuenta: string);
+begin
+  with DataAccesModule_.getIdCuentaCreditoNumeroCuenta do
+  begin
+  Prepare;
+  ParamByName('numeroDeCuenta').AsString:= numeroDeCuenta;
+  Open;
+  Refresh;
+  First;
+  while not EOF do
+    begin
+     idCuentaCredito := FieldByName('id_cuenta_credito').AsInteger;
+     Next;
+    end;
+  end;
+end;
+
+function TCuentaCredito.getIntereses: Currency;
+begin
+  intereses := 0.0;
+  with DataModuleDaniBD.CuentainteresesTable do
+  begin
+    Prepare;
+    ParamByName('idCuentaCredito').AsInteger := idCuentaCredito;
+    Open;
+    Refresh;
+    First;
+    while not EOF do
+    begin
+      intereses := FieldByName('totalInteresesAcumulados').AsCurrency;
+      Next;
+    end;
+  end;
+  Result := intereses;
+end;
+
+function TCuentaCredito.getPagos: integer;
+begin
+  pagos := 0;
+  with DataModuleDaniBD.PagoTable do
+  begin
+    Prepare;
+    ParamByName('idCuentaCredito').AsInteger := idCuentaCredito;
+    Open;
+    Refresh;
+    First;
+    while not EOF do
+    begin
+      pagos := pagos + 1;
+      Next;
+    end;
+  end;
+  Result := pagos;
+end;
 
 end.

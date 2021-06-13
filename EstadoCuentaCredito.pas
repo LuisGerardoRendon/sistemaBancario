@@ -44,7 +44,7 @@ uses DataModuleAldo, MenuCliente;
 procedure TFormEstadoCuentaCredito.cargarDatos(Sender: TObject);
 begin
   cuentaCredito := MenuCliente.FormMenuCliente.cuentaCredito;
-  LabelDeuda.Caption := cuentaCredito.deudaTotal.ToString;
+  LabelDeuda.Caption := CurrToStr(cuentaCredito.deudaTotal);
 
   with DataModuleAldoBD.PagoTable do
   begin

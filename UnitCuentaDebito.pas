@@ -12,37 +12,49 @@ uses System.SysUtils, System.Variants,
     idClienteCuenta : integer;
     idCuentaDebito : integer;
     numeroDeCuenta : string;
-    function getCuentaDebito : TCuentaDebito;
-
+    procedure actualizarEstado(estado: string; numeroCuenta: string);
+    procedure obtenerId(numeroCuenta: string);
 
   end;
   var
   cuentaDebito: TCuentaDebito;
 
 implementation
+uses DataAccesModule, FireDAC.Stan.Param;
+{ TCuentaDebito }
 
-uses DataModuleAldo;
-
-function TCuentaDebito.getCuentaDebito : TCuentaDebito;
+procedure TCuentaDebito.actualizarEstado(estado: string; numeroCuenta: string);
 begin
-  with DataModuleAldoBD.CuentaDebitoTable do
+obtenerId(numeroCuenta);
+with DataAccesModule.DataAccesModule_.updateCuentaDebito do
   begin
-    cuentaDebito := TCuentaDebito.Create;
-    Prepare;
-    ParamByName('numeroDeCuenta').AsString := numeroDeCuenta;
     Open;
-    First;
-    while not EOF do
+    Refresh;
+    if FindKey([idCuentaDebito]) then
     begin
-      cuentaDebito.estadoCuenta := FieldByName('estadoCuenta').AsString;
-      cuentaDebito.saldo := FieldByName('saldo').AsCurrency;
-      cuentaDebito.idClienteCuenta := FieldByName('id_cliente_cuenta').AsInteger;
-      cuentaDebito.idCuentaDebito := FieldByName('id_cuenta_debito').AsInteger;
-      cuentaDebito.numeroDeCuenta := FieldByName('numeroDeCuenta').AsString;
-      Next;
+      Edit;
+      FieldByName('estadoCuenta').AsString := estado;
+      Post;
     end;
-
-    Result := cuentaDebito;
   end;
 end;
+
+procedure TCuentaDebito.obtenerId(numeroCuenta: string);
+begin
+with DataAccesModule_.getIdCuentaDebitoConNumeroCuenta do
+  begin
+  Prepare;
+  ParamByName('numeroDeCuenta').AsString:= numeroDeCuenta;
+  Open;
+  Refresh;
+  First;
+  while not EOF do
+    begin
+     idCuentaDebito := FieldByName('id_cuenta_debito').AsInteger;
+     Next;
+    end;
+  end;
+
+end;
+
 end.
