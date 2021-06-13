@@ -23,6 +23,9 @@ type
     getIdCuentaDebitoConNumeroCuenta: TFDQuery;
     updateCuentaCredito: TFDTable;
     getIdCuentaCreditoNumeroCuenta: TFDQuery;
+    CuentaCreditoInteresesRecargos: TFDQuery;
+    dsInteresesRecargos: TDataSource;
+    crearRecargo: TFDTable;
   private
     { Private declarations }
   public

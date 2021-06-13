@@ -24,7 +24,8 @@ uses
   GestionarCuentaDebito in 'GestionarCuentaDebito.pas' {FormGestionarCuentaDebito},
   ElegirCuenta in 'ElegirCuenta.pas' {FormElegirCuenta},
   UnitCuentaDebito in 'UnitCuentaDebito.pas',
-  UnitCuentaCredito in 'UnitCuentaCredito.pas';
+  UnitCuentaCredito in 'UnitCuentaCredito.pas',
+  GernerarRecargosIntereses in 'GernerarRecargosIntereses.pas' {FormGenerarRecargosI};
 
 {$R *.res}
 
@@ -51,5 +52,6 @@ begin
   Application.CreateForm(TFormGestionarCuenta, FormGestionarCuenta);
   Application.CreateForm(TFormGestionarCuentaDebito, FormGestionarCuentaDebito);
   Application.CreateForm(TFormElegirCuenta, FormElegirCuenta);
+  Application.CreateForm(TFormGenerarRecargosI, FormGenerarRecargosI);
   Application.Run;
 end.

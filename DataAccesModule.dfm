@@ -134,4 +134,40 @@ object DataAccesModule_: TDataAccesModule_
         Value = Null
       end>
   end
+  object CuentaCreditoInteresesRecargos: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      
+        'SELECT numeroDeCuenta As N'#250'meroDeCuenta, deudaTotal As DeudaTota' +
+        'l,'
+      
+        'totalInteresesAcumulados As MontoDeCuentaDeIntereses, recargos.r' +
+        'ecargos AS N'#250'meroDeRecargos'
+      'FROM cuentaCredito'
+      '         INNER JOIN cuentaIntereses'
+      
+        '                    ON cuentaCredito.id_cuenta_credito = cuentaI' +
+        'ntereses.idCuentaCredito'
+      
+        '         LEFT OUTER JOIN (SELECT COUNT(idRecargo) AS recargos, i' +
+        'dCuentaCredito'
+      '                          FROM recargo) AS recargos'
+      
+        '                         ON id_cuenta_credito = recargos.idCuent' +
+        'aCredito ORDER BY DeudaTotal DESC;')
+    Left = 655
+    Top = 512
+  end
+  object dsInteresesRecargos: TDataSource
+    DataSet = CuentaCreditoInteresesRecargos
+    Left = 488
+    Top = 512
+  end
+  object crearRecargo: TFDTable
+    Connection = Banco_databaseConnection
+    UpdateOptions.UpdateTableName = 'banco_database.recargo'
+    TableName = 'banco_database.recargo'
+    Left = 672
+    Top = 96
+  end
 end

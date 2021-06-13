@@ -36,6 +36,7 @@
     Height = 42
     Caption = 'Congelar'
     TabOrder = 0
+    OnClick = clicCongelar
   end
   object Button2: TButton
     Left = 327
@@ -52,6 +53,7 @@
     Height = 41
     Caption = 'Cerrar cuenta'
     TabOrder = 2
+    OnClick = cerrrarCuentaClic
   end
   object Atrás: TButton
     Left = 208

@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids, UnitCuentaCredito,
   Vcl.StdCtrls;
 
 type
@@ -23,6 +23,7 @@ type
     { Private declarations }
   public
   numeroDeCuenta:string;
+
     { Public declarations }
   end;
 
