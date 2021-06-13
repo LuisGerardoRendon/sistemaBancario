@@ -11,87 +11,119 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnShow = cargarDatos
   PixelsPerInch = 96
   TextHeight = 14
   object Label1: TLabel
-    Left = 296
-    Top = 8
-    Width = 170
-    Height = 14
+    Left = 0
+    Top = 0
+    Width = 762
+    Height = 19
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
+    Align = alTop
+    Alignment = taCenter
     Caption = 'ESTADO DE CUENTA CREDITO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitWidth = 227
   end
-  object Label8: TLabel
-    Left = 128
-    Top = 260
-    Width = 118
-    Height = 14
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Caption = 'TOTAL ACUMULADO:'
+  object Label2: TLabel
+    Left = 316
+    Top = 136
+    Width = 96
+    Height = 18
+    Caption = 'Deuda Actual: '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
-  object Label9: TLabel
-    Left = 160
-    Top = 280
-    Width = 28
-    Height = 14
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Caption = '$500'
+  object LabelDeuda: TLabel
+    Left = 424
+    Top = 136
+    Width = 42
+    Height = 18
+    Caption = 'Deuda'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
-  object Label14: TLabel
-    Left = 548
-    Top = 264
-    Width = 35
-    Height = 14
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Caption = '$7400'
+  object Label3: TLabel
+    Left = 316
+    Top = 209
+    Width = 72
+    Height = 18
+    Caption = 'Intereses: '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object DBText1: TDBText
+    Left = 401
+    Top = 209
+    Width = 65
+    Height = 17
+    DataSource = DataModuleAldoBD.dsIntereses
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Panel1: TPanel
-    Left = 88
-    Top = 36
-    Width = 168
-    Height = 36
+    Left = 0
+    Top = 19
+    Width = 57
+    Height = 352
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
+    Align = alLeft
     Caption = 'Pagos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGreen
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
-  object Panel2: TPanel
-    Left = 88
-    Top = 216
-    Width = 172
-    Height = 40
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Caption = 'Intereses'
-    TabOrder = 1
-  end
   object Panel3: TPanel
-    Left = 468
-    Top = 40
-    Width = 188
-    Height = 32
+    Left = 696
+    Top = 19
+    Width = 66
+    Height = 352
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
+    Align = alRight
     Caption = 'Recargos'
-    TabOrder = 2
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
   end
   object Panel4: TPanel
     Left = 852
@@ -103,38 +135,40 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Margins.Right = 4
     Margins.Bottom = 4
     Caption = 'DeudaActual'
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 57
+    Top = 19
+    Width = 253
+    Height = 352
+    Align = alLeft
+    DataSource = DataModuleAldoBD.dspagos
     TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
-  object ListBox1: TListBox
-    Left = 32
-    Top = 80
-    Width = 280
-    Height = 112
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    ItemHeight = 14
+  object DBGrid2: TDBGrid
+    Left = 472
+    Top = 19
+    Width = 224
+    Height = 352
+    Align = alRight
+    DataSource = DataModuleAldoBD.dsRecargos
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
-  end
-  object ListBox2: TListBox
-    Left = 404
-    Top = 80
-    Width = 325
-    Height = 112
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    ItemHeight = 14
-    TabOrder = 5
-  end
-  object Panel5: TPanel
-    Left = 471
-    Top = 216
-    Width = 185
-    Height = 41
-    Caption = 'DEUDA ACTUAL'
-    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
 end

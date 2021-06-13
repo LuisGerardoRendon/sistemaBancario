@@ -11,51 +11,89 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnShow = cargarDatos
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 247
-    Top = 16
-    Width = 139
-    Height = 13
+    Left = 0
+    Top = 0
+    Width = 672
+    Height = 18
+    Align = alTop
+    Alignment = taCenter
     Caption = 'ESTADO DE CUENTA DEBITO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitWidth = 199
   end
-  object Label2: TLabel
-    Left = 280
-    Top = 95
-    Width = 72
-    Height = 13
-    Caption = 'SALDO TOTAL:'
+  object LabelSaldo: TLabel
+    Left = 303
+    Top = 227
+    Width = 39
+    Height = 19
+    Caption = 'Saldo'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGreen
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
-  object Label3: TLabel
-    Left = 375
-    Top = 95
-    Width = 36
-    Height = 13
-    Caption = '$12000'
+  object LabelEstadoDeCuenta: TLabel
+    Left = 295
+    Top = 272
+    Width = 47
+    Height = 19
+    Caption = 'Estado'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Panel1: TPanel
-    Left = 257
-    Top = 127
-    Width = 185
+    Left = 0
+    Top = 18
+    Width = 672
     Height = 41
+    Align = alTop
     Caption = 'MOVIMIENTOS'
     TabOrder = 0
-  end
-  object ListBox1: TListBox
-    Left = 160
-    Top = 171
-    Width = 417
-    Height = 162
-    ItemHeight = 13
-    TabOrder = 1
+    ExplicitLeft = 8
+    ExplicitTop = 135
   end
   object Panel2: TPanel
-    Left = 257
-    Top = 48
+    Left = 232
+    Top = 180
     Width = 185
     Height = 41
     Caption = 'SALDO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGreen
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 59
+    Width = 672
+    Height = 120
+    Align = alTop
+    DataSource = DataModuleAldoBD.dsMovimientos
     TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
 end
