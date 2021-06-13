@@ -18,6 +18,12 @@ type
     CuentacreditoTable: TFDQuery;
     CuentadebitoTable: TFDQuery;
     updateSaldoCuenta: TFDTable;
+    createMovimiento: TFDTable;
+    PagoTable: TFDQuery;
+    createPago: TFDTable;
+    CRUDCuentaCredito: TFDTable;
+    CuentainteresesTable: TFDQuery;
+    CRUDCuentaIntereses: TFDTable;
   private
     { Private declarations }
   public

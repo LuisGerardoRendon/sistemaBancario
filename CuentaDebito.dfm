@@ -102,4 +102,13 @@ object FormCuentaDebito: TFormCuentaDebito
     TabOrder = 5
     TextHint = 'Ingrese el monto'
   end
+  object btnAtras: TButton
+    Left = 16
+    Top = 317
+    Width = 49
+    Height = 25
+    Caption = 'Atras'
+    TabOrder = 6
+    OnClick = btnAtrasClick
+  end
 end
