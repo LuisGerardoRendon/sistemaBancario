@@ -29,7 +29,7 @@ uses System.SysUtils, System.Variants,
 
 implementation
 
-uses DataModuleDani;
+uses DataModuleDani, FireDAC.Stan.Param;
 
 function TUsuario.getCuentaCredito : TCuentaCredito;
 begin

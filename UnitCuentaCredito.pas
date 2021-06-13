@@ -59,7 +59,7 @@ begin
      Next;
     end;
   end;
-
+end;
 
 function TCuentaCredito.getIntereses: Currency;
 begin
