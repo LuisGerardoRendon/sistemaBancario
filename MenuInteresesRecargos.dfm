@@ -12,6 +12,7 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
   Font.Style = []
   OldCreateOrder = False
   OnClose = onClose
+  OnShow = onShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -28,8 +29,8 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 552
-    Top = 89
+    Left = 544
+    Top = 57
     Width = 166
     Height = 25
     Caption = 'Cuentas activas'
@@ -40,33 +41,38 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object DBGrid1: TDBGrid
-    Left = 144
-    Top = 120
-    Width = 969
-    Height = 441
+  object labelTitulo: TLabel
+    Left = 451
+    Top = 96
+    Width = 424
+    Height = 23
+    Caption = 'Seleccione la cuenta y registre cargos e intereses! '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = [fsItalic]
+    ParentFont = False
+  end
+  object DBGridCuentasActivas: TDBGrid
+    Left = 240
+    Top = 144
+    Width = 809
+    Height = 417
+    DataSource = DataAccesModule_.dsInteresesRecargos
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
+    TitleFont.Height = -21
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-  end
-  object Button1: TButton
-    Left = 368
-    Top = 576
-    Width = 121
-    Height = 49
-    Caption = 'Generar recargo'
-    TabOrder = 1
-  end
-  object Button2: TButton
-    Left = 757
-    Top = 576
-    Width = 121
-    Height = 49
-    Caption = 'Generar Inter'#233's'
-    TabOrder = 2
+    OnCellClick = onCellClic
   end
   object Button3: TButton
     Left = 37
@@ -74,7 +80,7 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
     Width = 121
     Height = 49
     Caption = 'Atr'#225's'
-    TabOrder = 3
+    TabOrder = 1
     OnClick = clicAtras
   end
 end

@@ -166,6 +166,10 @@
         </DCCReference>
         <DCCReference Include="UnitCuentaDebito.pas"/>
         <DCCReference Include="UnitCuentaCredito.pas"/>
+        <DCCReference Include="GernerarRecargosIntereses.pas">
+            <Form>FormGenerarRecargosI</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -7,8 +7,8 @@ object DataAccesModule_: TDataAccesModule_
       'ConnectionDef=banco_database')
     Connected = True
     LoginPrompt = False
-    Left = 445
-    Top = 142
+    Left = 453
+    Top = 214
   end
   object UsuariobancoTable: TFDQuery
     Connection = Banco_databaseConnection
@@ -17,8 +17,8 @@ object DataAccesModule_: TDataAccesModule_
       
         'WHERE correoElectronico = :correoElectronico AND contrasenia = :' +
         'contrasenia')
-    Left = 444
-    Top = 212
+    Left = 92
+    Top = 84
     ParamData = <
       item
         Name = 'CORREOELECTRONICO'
@@ -44,38 +44,41 @@ object DataAccesModule_: TDataAccesModule_
         '         INNER JOIN movimiento ON cuentaDebito.id_cuenta_debito ' +
         '= movimiento.id_cuenta_movimiento WHERE estadoCuenta = '#39'activa'#39
       'GROUP BY id_cuenta_debito ORDER BY NumeroDeMovimientos DESC ;')
-    Left = 217
+    Left = 73
     Top = 328
   end
   object CuentacreditoTable: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
-      
-        'SELECT cuentaC.numeroDeCuenta AS NumeroDeCuenta, cuentaC.deudaTo' +
-        'tal AS DeudaTotal, cuentaI.totalInteresesAcumulados AS TotalCuen' +
-        'taIntereses FROM banco_database.cuentaCredito cuentaC INNER JOIN' +
-        ' cuentaIntereses cuentaI ON cuentaC.id_cuenta_credito = cuentaI.' +
-        'idCuentaCredito order by  cuentaI.totalInteresesAcumulados DESC;')
-    Left = 622
-    Top = 359
+      'SELECT cuentaC.numeroDeCuenta AS NumeroDeCuenta,'
+      ' cuentaC.deudaTotal AS DeudaTotal,'
+      ' cuentaI.totalInteresesAcumulados'
+      ' AS TotalCuentaIntereses'
+      ' FROM banco_database.cuentaCredito cuentaC'
+      ' INNER JOIN cuentaIntereses cuentaI ON'
+      ' cuentaC.id_cuenta_credito = cuentaI.idCuentaCredito'
+      ' WHERE estadoCuenta = '#39'activa'#39
+      ' order by  cuentaI.totalInteresesAcumulados DESC;')
+    Left = 758
+    Top = 167
   end
   object dsCuentaCredito: TDataSource
     DataSet = CuentacreditoTable
-    Left = 736
-    Top = 400
+    Left = 768
+    Top = 248
   end
   object dsCuentaDebito: TDataSource
     DataSet = CuentadebitoTable
-    Left = 104
-    Top = 408
+    Left = 56
+    Top = 400
   end
   object actualizarEstadoCuenta: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
       'UPDATE cuentaCredito set estadoCuenta = :estadoDeCuenta'
       'WHERE numeroDeCuenta = :numeroDeCuenta;')
-    Left = 355
-    Top = 280
+    Left = 747
+    Top = 328
     ParamData = <
       item
         Name = 'ESTADODECUENTA'
@@ -94,16 +97,16 @@ object DataAccesModule_: TDataAccesModule_
     Connection = Banco_databaseConnection
     UpdateOptions.UpdateTableName = 'banco_database.cuentaDebito'
     TableName = 'banco_database.cuentaDebito'
-    Left = 568
-    Top = 432
+    Left = 48
+    Top = 480
   end
   object getIdCuentaDebitoConNumeroCuenta: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
       'SELECT id_cuenta_debito FROM banco_database.cuentaDebito '
       'WHERE numeroDeCuenta = :numeroDeCuenta;')
-    Left = 695
-    Top = 236
+    Left = 79
+    Top = 148
     ParamData = <
       item
         Name = 'NUMERODECUENTA'
@@ -116,16 +119,16 @@ object DataAccesModule_: TDataAccesModule_
     Connection = Banco_databaseConnection
     UpdateOptions.UpdateTableName = 'banco_database.cuentaCredito'
     TableName = 'banco_database.cuentaCredito'
-    Left = 184
-    Top = 456
+    Left = 648
+    Top = 496
   end
   object getIdCuentaCreditoNumeroCuenta: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
       'SELECT id_cuenta_credito FROM banco_database.cuentaCredito'
       'WHERE numeroDeCuenta = :numeroDeCuenta;')
-    Left = 120
-    Top = 259
+    Left = 760
+    Top = 91
     ParamData = <
       item
         Name = 'NUMERODECUENTA'
@@ -133,5 +136,49 @@ object DataAccesModule_: TDataAccesModule_
         ParamType = ptInput
         Value = Null
       end>
+  end
+  object CuentaCreditoInteresesRecargos: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      
+        'SELECT numeroDeCuenta As N'#250'meroDeCuenta, deudaTotal As DeudaTota' +
+        'l,'
+      
+        'totalInteresesAcumulados As MontoDeCuentaDeIntereses, recargos.r' +
+        'ecargos AS N'#250'meroDeRecargos'
+      'FROM cuentaCredito'
+      '         INNER JOIN cuentaIntereses'
+      
+        '                    ON cuentaCredito.id_cuenta_credito = cuentaI' +
+        'ntereses.idCuentaCredito'
+      
+        '         LEFT OUTER JOIN (SELECT COUNT(idRecargo) AS recargos, i' +
+        'dCuentaCredito'
+      '                          FROM recargo) AS recargos'
+      
+        '                         ON id_cuenta_credito = recargos.idCuent' +
+        'aCredito ORDER BY DeudaTotal DESC;')
+    Left = 743
+    Top = 408
+  end
+  object dsInteresesRecargos: TDataSource
+    DataSet = CuentaCreditoInteresesRecargos
+    Left = 800
+    Top = 504
+  end
+  object crearRecargo: TFDTable
+    IndexFieldNames = 'idRecargo'
+    Connection = Banco_databaseConnection
+    UpdateOptions.UpdateTableName = 'banco_database.recargo'
+    TableName = 'banco_database.recargo'
+    Left = 792
+    Top = 8
+  end
+  object crearInteres: TFDTable
+    Connection = Banco_databaseConnection
+    UpdateOptions.UpdateTableName = 'banco_database.cuentaIntereses'
+    TableName = 'banco_database.cuentaIntereses'
+    Left = 704
+    Top = 32
   end
 end
