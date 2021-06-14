@@ -26,6 +26,7 @@ type
     CuentaCreditoInteresesRecargos: TFDQuery;
     dsInteresesRecargos: TDataSource;
     crearRecargo: TFDTable;
+    crearInteres: TFDTable;
   private
     { Private declarations }
   public

@@ -23,6 +23,7 @@ type
     { Private declarations }
   public
   numeroDeCuenta:string;
+  deudaTotal: Currency;
 
     { Public declarations }
   end;
@@ -50,7 +51,7 @@ end;
 procedure TFormGestionarCuentasCredito.clicCuenta(Column: TColumn);
 begin
 numeroDeCuenta := DBGridCuentasCredito.Fields[0].AsString;
-
+deudaTotal := DBGridCuentasCredito.Fields[1].AsCurrency;
 FormGestionarCuentasCredito.Visible:= False;
 GestionarCuentaCredito.FormGestionarCuenta.Show;
 end;

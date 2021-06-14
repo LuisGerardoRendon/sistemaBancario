@@ -16,18 +16,32 @@
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 104
-    Top = 24
+    Left = 152
+    Top = 8
     Width = 92
     Height = 13
     Caption = 'N'#250'mero de cuenta:'
   end
   object labelNumeroCuenta: TLabel
-    Left = 227
-    Top = 24
+    Left = 283
+    Top = 8
     Width = 94
     Height = 13
     Caption = 'labelNumeroCuenta'
+  end
+  object Label2: TLabel
+    Left = 182
+    Top = 27
+    Width = 62
+    Height = 13
+    Caption = 'Deuda Total:'
+  end
+  object labelDeudaTotal: TLabel
+    Left = 283
+    Top = 27
+    Width = 77
+    Height = 13
+    Caption = 'labelDeudaTotal'
   end
   object Button1: TButton
     Left = 168

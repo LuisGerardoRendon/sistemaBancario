@@ -14,6 +14,8 @@ type
     Label1: TLabel;
     labelNumeroCuenta: TLabel;
     Atrás: TButton;
+    Label2: TLabel;
+    labelDeudaTotal: TLabel;
     procedure clicAtras(Sender: TObject);
     procedure onClose(Sender: TObject; var Action: TCloseAction);
     procedure onShow(Sender: TObject);
@@ -24,6 +26,7 @@ type
   public
   cuentaCredito: TCuentaCredito;
   numeroDeCuenta: string;
+  deudaTotal: Currency;
     { Public declarations }
   end;
 
@@ -69,6 +72,8 @@ numeroDeCuenta := GestionarCuentasCredito.FormGestionarCuentasCredito.numeroDeCu
 labelNumeroCuenta.Caption := numeroDeCuenta;
 cuentaCredito := TCuentaCredito.Create;
 cuentaCredito.numeroDeCuenta := numeroDeCuenta;
+deudaTotal := GestionarCuentasCredito.FormGestionarCuentasCredito.deudaTotal;
+labelDeudaTotal.Caption := CurrToStrF(deudaTotal, ffCurrency, 2);
 end;
 
 end.
