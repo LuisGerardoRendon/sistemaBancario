@@ -63,7 +63,7 @@ object DataModuleAldoBD: TDataModuleAldoBD
   object PagoTable: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
-      'SELECT * FROM banco_database.pago'
+      'SELECT fecha, monto FROM banco_database.pago'
       'WHERE idCuentaCredito = :id_cuenta_credito')
     Left = 285
     Top = 279
@@ -83,7 +83,7 @@ object DataModuleAldoBD: TDataModuleAldoBD
   object RecargoTable: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
-      'SELECT * FROM banco_database.recargo'
+      'SELECT fecha, monto FROM banco_database.recargo'
       'WHERE idCuentaCredito = :id_cuenta_credito')
     Left = 358
     Top = 219
@@ -103,7 +103,9 @@ object DataModuleAldoBD: TDataModuleAldoBD
   object MovimientoTable: TFDQuery
     Connection = Banco_databaseConnection
     SQL.Strings = (
-      'SELECT * FROM banco_database.movimiento'
+      
+        'SELECT tipo_movimiento, monto, fecha FROM banco_database.movimie' +
+        'nto'
       'WHERE id_cuenta_movimiento = :id_cuenta_debito')
     Left = 147
     Top = 280

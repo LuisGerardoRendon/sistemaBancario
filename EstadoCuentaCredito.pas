@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, System.Actions, Vcl.ActnList,
   Vcl.StdCtrls, Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, UnitCuentaCredito,
-  Vcl.DBCtrls;
+  Vcl.DBCtrls, UnitUsuario;
 
 type
   TFormEstadoCuentaCredito = class(TForm)
@@ -20,9 +20,14 @@ type
     LabelDeuda: TLabel;
     Label3: TLabel;
     DBText1: TDBText;
+    Label4: TLabel;
+    LabelNombreCliente: TLabel;
+    ButtonCancelar: TButton;
 
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cargarDatos(Sender: TObject);
+    procedure regresarAMenuCliente();
+    procedure ButtonCancelarClick(Sender: TObject);
 
 
   private
@@ -31,6 +36,7 @@ type
     { Public declarations }
     cuentaCredito : TCuentaCredito;
     intereses : string;
+    usuarioCliente : TUsuario;
   end;
 
 var
@@ -40,11 +46,20 @@ implementation
 
 {$R *.dfm}
 
-uses DataModuleAldo, MenuCliente;
+uses DataModuleAldo, MenuCliente, PantallaPrincipal;
+
+procedure TFormEstadoCuentaCredito.ButtonCancelarClick(Sender: TObject);
+begin
+  regresarAMenuCliente;
+end;
+
 procedure TFormEstadoCuentaCredito.cargarDatos(Sender: TObject);
 begin
+
+  usuarioCliente := PantallaPrincipal.FormPantallaPrincipal.usuario;
   cuentaCredito := MenuCliente.FormMenuCliente.cuentaCredito;
   LabelDeuda.Caption := CurrToStr(cuentaCredito.deudaTotal);
+  LabelNombreCliente.Caption := usuarioCliente.getNombreCompleto;
 
   with DataModuleAldoBD.PagoTable do
   begin
@@ -84,6 +99,11 @@ begin
        Application.Terminate;
 end;
 
+procedure TFormEstadoCuentaCredito.regresarAMenuCliente;
+begin
+  MenuCliente.FormMenuCliente.Show;
+  FormEstadoCuentaCredito.Visible := False;
+end;
 
 
 end.

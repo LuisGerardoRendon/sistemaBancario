@@ -54,15 +54,30 @@ uses EstadoCuentaDebito, EstadoCuentaCredito, PantallaPrincipal;
 
 procedure TFormMenuCliente.Button1Click(Sender: TObject);
 begin
-        FormEstadoCuentaDebito.Show;
-        FormMenuCliente.Visible := False;
+        if not (Length(cuentaDebito.numeroDeCuenta)= 0) then
+        begin
+            FormEstadoCuentaDebito.Show;
+            FormMenuCliente.Visible := False;
+        end
+        Else
+        begin
+            showMessage('El cliente no tiene una cuenta de debito');
+        end;
 
 end;
 
 procedure TFormMenuCliente.Button2Click(Sender: TObject);
 begin
-        FormEstadoCuentaCredito.Show;
-        FormMenuCliente.Visible := False;
+
+        if not (Length(cuentaCredito.numeroDeCuenta)= 0) then
+        begin
+            FormEstadoCuentaCredito.Show;
+            FormMenuCliente.Visible := False;
+        end
+        Else
+        begin
+            showMessage('El cliente no tiene una cuenta de credito');
+        end;
 end;
 
 procedure TFormMenuCliente.cargarLabels(Sender: TObject);
@@ -71,7 +86,7 @@ begin
     cuentaDebito := usuarioCliente.getCuentaDebito;
     cuentaCredito := usuarioCliente.getCuentaCredito;
 
-    Label2.Caption := usuarioCliente.nombres;
+    Label2.Caption := usuarioCliente.getNombreCompleto;
     
 
 end;
