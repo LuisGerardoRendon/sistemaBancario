@@ -10,7 +10,6 @@ type
   TFormGestionarCuentaDebito = class(TForm)
     Button3: TButton;
     Button1: TButton;
-    Button2: TButton;
     Atrás: TButton;
     Label1: TLabel;
     labelNumeroCuenta: TLabel;
