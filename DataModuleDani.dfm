@@ -62,19 +62,19 @@ object DataModuleDaniBD: TDataModuleDaniBD
         Value = Null
       end>
   end
-  object updateSaldoCuenta: TFDTable
+  object CRUDCuentaDebito: TFDTable
     Connection = Banco_databaseConnection
     UpdateOptions.UpdateTableName = 'banco_database.cuentaDebito'
     TableName = 'banco_database.cuentaDebito'
     Left = 296
-    Top = 56
+    Top = 24
   end
   object createMovimiento: TFDTable
     Connection = Banco_databaseConnection
     UpdateOptions.UpdateTableName = 'banco_database.movimiento'
     TableName = 'banco_database.movimiento'
     Left = 296
-    Top = 128
+    Top = 288
   end
   object PagoTable: TFDQuery
     Connection = Banco_databaseConnection
@@ -96,14 +96,14 @@ object DataModuleDaniBD: TDataModuleDaniBD
     UpdateOptions.UpdateTableName = 'banco_database.pago'
     TableName = 'banco_database.pago'
     Left = 296
-    Top = 200
+    Top = 232
   end
   object CRUDCuentaCredito: TFDTable
     Connection = Banco_databaseConnection
     UpdateOptions.UpdateTableName = 'banco_database.cuentaCredito'
     TableName = 'banco_database.cuentaCredito'
     Left = 296
-    Top = 280
+    Top = 136
   end
   object CuentainteresesTable: TFDQuery
     Connection = Banco_databaseConnection
@@ -124,7 +124,66 @@ object DataModuleDaniBD: TDataModuleDaniBD
     Connection = Banco_databaseConnection
     UpdateOptions.UpdateTableName = 'banco_database.cuentaIntereses'
     TableName = 'banco_database.cuentaIntereses'
+    Left = 296
+    Top = 184
+  end
+  object CRUDUsuario: TFDTable
+    Connection = Banco_databaseConnection
+    UpdateOptions.UpdateTableName = 'banco_database.usuarioBanco'
+    TableName = 'banco_database.usuarioBanco'
+    Left = 296
+    Top = 88
+  end
+  object isClienteCreated: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      'SELECT * FROM banco_database.usuarioBanco'
+      'WHERE correoElectronico = :correoElectronico OR'
+      'claveElector = :claveElector')
+    Left = 440
+    Top = 96
+    ParamData = <
+      item
+        Name = 'CORREOELECTRONICO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'CLAVEELECTOR'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object isCuentaCreditoCreated: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      'SELECT * FROM banco_database.cuentaCredito'
+      'WHERE numeroDeCuenta = :numeroDeCuenta')
     Left = 448
-    Top = 272
+    Top = 160
+    ParamData = <
+      item
+        Name = 'NUMERODECUENTA'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  object isCuentaDebitoCreated: TFDQuery
+    Connection = Banco_databaseConnection
+    SQL.Strings = (
+      'SELECT * FROM banco_database.cuentaDebito'
+      'WHERE numeroDeCuenta = :numeroDeCuenta')
+    Left = 448
+    Top = 224
+    ParamData = <
+      item
+        Name = 'NUMERODECUENTA'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end>
   end
 end

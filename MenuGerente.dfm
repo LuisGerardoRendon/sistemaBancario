@@ -40,13 +40,14 @@ object FormMenuGerente: TFormMenuGerente
     TabOrder = 0
     OnClick = clicGestionarCuentasCredit
   end
-  object Button2: TButton
+  object btnRegistrarCuenta: TButton
     Left = 72
     Top = 192
     Width = 249
     Height = 57
     Caption = 'Registrar cuenta'
     TabOrder = 1
+    OnClick = btnRegistrarCuentaClick
   end
   object Button3: TButton
     Left = 72

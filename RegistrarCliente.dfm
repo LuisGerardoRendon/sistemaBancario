@@ -2,7 +2,7 @@ object FormRegistrarCliente: TFormRegistrarCliente
   Left = 0
   Top = 0
   Caption = 'FormRegistrarCliente'
-  ClientHeight = 720
+  ClientHeight = 702
   ClientWidth = 1280
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,7 +11,9 @@ object FormRegistrarCliente: TFormRegistrarCliente
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnClose = onClose
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -132,11 +134,11 @@ object FormRegistrarCliente: TFormRegistrarCliente
     ParentFont = False
   end
   object Label10: TLabel
-    Left = 752
+    Left = 759
     Top = 154
-    Width = 111
+    Width = 105
     Height = 19
-    Caption = 'Tipo de cuenta:'
+    Caption = 'Tipo de cuenta'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -144,22 +146,23 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Style = []
     ParentFont = False
   end
-  object Label11: TLabel
-    Left = 749
-    Top = 203
-    Width = 114
-    Height = 19
-    Caption = 'Moto del cr'#233'dito'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
-  object Label12: TLabel
-    Left = 734
+  object lbSaldoInicial: TLabel
+    Left = 780
     Top = 259
+    Width = 84
+    Height = 19
+    Caption = 'Saldo inicial'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object lbNumCuenta: TLabel
+    Left = 734
+    Top = 203
     Width = 130
     Height = 19
     Caption = 'N'#250'mero de cuenta'
@@ -170,10 +173,23 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Style = []
     ParentFont = False
   end
-  object Edit1: TEdit
+  object Label11: TLabel
+    Left = 130
+    Top = 480
+    Width = 79
+    Height = 19
+    Caption = 'Contrase'#241'a'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object txtNombre: TEdit
     Left = 232
     Top = 151
-    Width = 121
+    Width = 249
     Height = 27
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -182,11 +198,13 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    TextHint = 'ejem: Aldo'
+    OnKeyPress = letterOnlyKeyPress
   end
-  object Edit2: TEdit
+  object txtApellidoPaterno: TEdit
     Left = 232
     Top = 200
-    Width = 121
+    Width = 249
     Height = 27
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -195,11 +213,13 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    TextHint = 'ejem: Pale'
+    OnKeyPress = letterOnlyKeyPress
   end
-  object Edit3: TEdit
+  object txtApellidoMaterno: TEdit
     Left = 232
     Top = 256
-    Width = 121
+    Width = 249
     Height = 27
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -208,8 +228,10 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    TextHint = 'ejem: Rendon'
+    OnKeyPress = letterOnlyKeyPress
   end
-  object Edit4: TEdit
+  object txtClaveElector: TEdit
     Left = 232
     Top = 367
     Width = 249
@@ -219,11 +241,12 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    MaxLength = 12
     ParentFont = False
-    TabOrder = 3
-    TextHint = 'REML123445998MV'
+    TabOrder = 4
+    TextHint = 'ejem: REML123445998MV'
   end
-  object Edit5: TEdit
+  object txtCorreoElectronico: TEdit
     Left = 232
     Top = 424
     Width = 249
@@ -234,53 +257,35 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
-    TextHint = 'cliente@gmail.com'
+    TabOrder = 5
+    TextHint = 'ejem: cliente@gmail.com'
   end
-  object Edit6: TEdit
+  object txtTelefono: TEdit
     Left = 232
     Top = 312
-    Width = 121
+    Width = 249
     Height = 27
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    MaxLength = 10
+    NumbersOnly = True
     ParentFont = False
-    TabOrder = 5
-    TextHint = '#########'
+    TabOrder = 3
+    TextHint = 'N'#250'mero de 10 d'#237'gitos'
   end
-  object ComboBox1: TComboBox
+  object cbTipoCuenta: TComboBox
     Left = 928
     Top = 156
-    Width = 145
+    Width = 233
     Height = 21
-    TabOrder = 6
-    Text = 'Cr'#233'dito'
-  end
-  object Edit7: TEdit
-    Left = 928
-    Top = 200
-    Width = 121
-    Height = 27
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
+    Style = csDropDownList
     TabOrder = 7
+    OnChange = cbTipoCuentaChange
   end
-  object Button1: TButton
-    Left = 937
-    Top = 592
-    Width = 224
-    Height = 73
-    Caption = 'Registrar Cliente'
-    TabOrder = 8
-  end
-  object Edit8: TEdit
+  object txtSaldoInicial: TEdit
     Left = 928
     Top = 256
     Width = 233
@@ -290,16 +295,56 @@ object FormRegistrarCliente: TFormRegistrarCliente
     Font.Height = -16
     Font.Name = 'Tahoma'
     Font.Style = []
+    NumbersOnly = True
     ParentFont = False
     TabOrder = 9
+    Visible = False
   end
-  object Button2: TButton
-    Left = 79
-    Top = 592
-    Width = 224
-    Height = 73
-    Caption = 'Atr'#225's'
+  object btnRegistrar: TButton
+    Left = 1049
+    Top = 644
+    Width = 112
+    Height = 25
+    Caption = 'Registrar Cliente'
     TabOrder = 10
+    OnClick = btnRegistrarClick
+  end
+  object txtNumeroCuenta: TEdit
+    Left = 928
+    Top = 200
+    Width = 233
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    MaxLength = 20
+    NumbersOnly = True
+    ParentFont = False
+    TabOrder = 8
+  end
+  object btnAtras: TButton
+    Left = 79
+    Top = 640
+    Width = 58
+    Height = 33
+    Caption = 'Atr'#225's'
+    TabOrder = 11
     OnClick = clicAtras
+  end
+  object txtContrasenia: TEdit
+    Left = 232
+    Top = 477
+    Width = 249
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+    TextHint = 'Contrase'#241'a del cliente'
   end
 end
