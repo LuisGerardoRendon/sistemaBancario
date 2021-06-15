@@ -11,6 +11,7 @@ object FormMenuGerente: TFormMenuGerente
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnClose = onClose
   OnCreate = FormCreate
   OnShow = cargarLabel
