@@ -24,6 +24,7 @@ type
     ButtonCancelar: TButton;
     Label5: TLabel;
     LabelNumeroDeCuenta: TLabel;
+    Label6: TLabel;
 
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cargarDatos(Sender: TObject);

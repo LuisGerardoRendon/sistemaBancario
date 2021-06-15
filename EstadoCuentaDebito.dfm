@@ -34,7 +34,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   end
   object LabelEstadoDeCuenta: TLabel
     Left = 0
-    Top = 461
+    Top = 224
     Width = 1280
     Height = 21
     Align = alTop
@@ -46,7 +46,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 454
+    ExplicitTop = 461
     ExplicitWidth = 51
   end
   object Label2: TLabel
@@ -63,7 +63,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 18
     ExplicitWidth = 75
   end
   object LabelNombreCliente: TLabel
@@ -80,7 +79,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 42
     ExplicitWidth = 70
   end
   object Label3: TLabel
@@ -97,7 +95,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 66
     ExplicitWidth = 171
   end
   object LabelNumeroCuenta: TLabel
@@ -114,12 +111,11 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 90
     ExplicitWidth = 131
   end
   object LabelSaldo: TLabel
     Left = 0
-    Top = 399
+    Top = 162
     Width = 1280
     Height = 21
     Align = alTop
@@ -131,12 +127,12 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 392
+    ExplicitTop = 399
     ExplicitWidth = 40
   end
   object Panel1: TPanel
     Left = 0
-    Top = 121
+    Top = 245
     Width = 1280
     Height = 41
     Align = alTop
@@ -148,11 +144,12 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitTop = 120
+    ExplicitLeft = 8
+    ExplicitTop = 271
   end
   object Panel2: TPanel
     Left = 0
-    Top = 358
+    Top = 121
     Width = 1280
     Height = 41
     Align = alTop
@@ -164,14 +161,14 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    ExplicitTop = 345
+    ExplicitTop = 358
   end
   object DBGrid1: TDBGrid
-    Left = 0
-    Top = 162
-    Width = 1280
+    Left = 216
+    Top = 284
+    Width = 785
     Height = 196
-    Align = alTop
+    Align = alCustom
     DataSource = DataModuleAldoBD.dsMovimientos
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
@@ -181,8 +178,8 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     TitleFont.Style = []
   end
   object ButtonRegresar: TButton
-    Left = 584
-    Top = 530
+    Left = 600
+    Top = 570
     Width = 121
     Height = 31
     Align = alCustom
@@ -192,7 +189,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   end
   object Panel3: TPanel
     Left = 0
-    Top = 420
+    Top = 183
     Width = 1280
     Height = 41
     Align = alTop
@@ -204,6 +201,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 4
-    ExplicitTop = 407
+    ExplicitTop = 420
   end
 end
