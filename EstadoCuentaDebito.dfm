@@ -2,8 +2,8 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   Left = 0
   Top = 0
   Caption = 'FormEstadoCuentaDebito'
-  ClientHeight = 341
-  ClientWidth = 672
+  ClientHeight = 434
+  ClientWidth = 807
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   object Label1: TLabel
     Left = 0
     Top = 0
-    Width = 672
+    Width = 807
     Height = 18
     Align = alTop
     Alignment = taCenter
@@ -31,24 +31,13 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     ParentFont = False
     ExplicitWidth = 199
   end
-  object LabelSaldo: TLabel
-    Left = 311
-    Top = 259
-    Width = 39
-    Height = 19
-    Caption = 'Saldo'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clGreen
-    Font.Height = -16
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-  end
   object LabelEstadoDeCuenta: TLabel
-    Left = 311
-    Top = 296
-    Width = 47
-    Height = 19
+    Left = 0
+    Top = 346
+    Width = 807
+    Height = 26
+    Align = alCustom
+    Alignment = taCenter
     Caption = 'Estado'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue
@@ -60,7 +49,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   object Label2: TLabel
     Left = 0
     Top = 18
-    Width = 672
+    Width = 807
     Height = 18
     Align = alTop
     Alignment = taCenter
@@ -76,7 +65,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   object LabelNombreCliente: TLabel
     Left = 0
     Top = 36
-    Width = 672
+    Width = 807
     Height = 18
     Align = alTop
     Alignment = taCenter
@@ -89,21 +78,72 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     ParentFont = False
     ExplicitWidth = 52
   end
-  object Panel1: TPanel
+  object Label3: TLabel
     Left = 0
     Top = 54
-    Width = 672
+    Width = 807
+    Height = 18
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Numero de cuenta:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitWidth = 127
+  end
+  object LabelNumeroCuenta: TLabel
+    Left = 0
+    Top = 72
+    Width = 807
+    Height = 18
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'numeroCuenta'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitLeft = 400
+    ExplicitTop = 78
+    ExplicitWidth = 96
+  end
+  object LabelSaldo: TLabel
+    Left = 0
+    Top = 298
+    Width = 807
+    Height = 19
+    Align = alCustom
+    Alignment = taCenter
+    Caption = 'Saldo'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGreen
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 90
+    Width = 807
     Height = 41
     Align = alTop
     Caption = 'MOVIMIENTOS'
     TabOrder = 0
-    ExplicitTop = 74
+    ExplicitLeft = -8
+    ExplicitTop = 110
   end
   object Panel2: TPanel
-    Left = 240
-    Top = 212
-    Width = 185
+    Left = 0
+    Top = 251
+    Width = 807
     Height = 41
+    Align = alTop
     Caption = 'SALDO'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clGreen
@@ -112,11 +152,14 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    ExplicitLeft = 296
+    ExplicitTop = 252
+    ExplicitWidth = 185
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 95
-    Width = 672
+    Top = 131
+    Width = 807
     Height = 120
     Align = alTop
     DataSource = DataModuleAldoBD.dsMovimientos
@@ -128,11 +171,11 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     TitleFont.Style = []
   end
   object ButtonRegresar: TButton
-    Left = 544
-    Top = 290
+    Left = 48
+    Top = 378
     Width = 75
     Height = 25
-    Caption = 'Regresar'
+    Caption = 'Atras'
     TabOrder = 3
     OnClick = ButtonRegresarClick
   end

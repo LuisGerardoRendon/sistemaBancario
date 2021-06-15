@@ -10,7 +10,6 @@ uses
 type
   TFormEstadoCuentaDebito = class(TForm)
     Label1: TLabel;
-    LabelSaldo: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     DBGrid1: TDBGrid;
@@ -18,6 +17,9 @@ type
     Label2: TLabel;
     LabelNombreCliente: TLabel;
     ButtonRegresar: TButton;
+    Label3: TLabel;
+    LabelNumeroCuenta: TLabel;
+    LabelSaldo: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cargarDatos(Sender: TObject);
     procedure RegresarAMenuCliente();
@@ -51,6 +53,7 @@ begin
   LabelSaldo.Caption := CurrToStr(cuentaDebito.saldo);
   LabelEstadoDeCuenta.Caption := cuentaDebito.estadoCuenta;
   LabelNombreCliente.Caption := usuarioCliente.getNombreCompleto;
+  LabelNumeroCuenta.Caption := cuentaDebito.numeroDeCuenta;
 
   with DataModuleAldoBd.MovimientoTable do
   begin

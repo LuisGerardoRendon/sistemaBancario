@@ -2,7 +2,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
   Left = 0
   Top = 0
   Caption = 'EstadoCuentaCredito'
-  ClientHeight = 371
+  ClientHeight = 434
   ClientWidth = 762
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -101,8 +101,6 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitLeft = 360
-    ExplicitTop = 40
     ExplicitWidth = 52
   end
   object LabelNombreCliente: TLabel
@@ -119,14 +117,13 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitLeft = -8
-    ExplicitTop = 43
+    ExplicitWidth = 41
   end
   object Panel1: TPanel
     Left = 0
     Top = 55
     Width = 57
-    Height = 316
+    Height = 379
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -140,14 +137,13 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitTop = 19
-    ExplicitHeight = 352
+    ExplicitHeight = 316
   end
   object Panel3: TPanel
     Left = 696
     Top = 55
     Width = 66
-    Height = 316
+    Height = 379
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -161,8 +157,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    ExplicitTop = 19
-    ExplicitHeight = 352
+    ExplicitHeight = 316
   end
   object Panel4: TPanel
     Left = 852
@@ -180,7 +175,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Left = 57
     Top = 55
     Width = 240
-    Height = 316
+    Height = 379
     Align = alLeft
     DataSource = DataModuleAldoBD.dspagos
     TabOrder = 3
@@ -194,7 +189,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Left = 472
     Top = 55
     Width = 224
-    Height = 316
+    Height = 379
     Align = alRight
     DataSource = DataModuleAldoBD.dsRecargos
     Font.Charset = DEFAULT_CHARSET
