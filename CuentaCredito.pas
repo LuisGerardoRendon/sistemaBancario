@@ -18,6 +18,10 @@ type
     Label4: TLabel;
     cbPagarIntereses: TCheckBox;
     btnAtras: TButton;
+    Label5: TLabel;
+    Label6: TLabel;
+    txtIntereses: TEdit;
+    txtTotal: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure cbPagarInteresesClick(Sender: TObject);
@@ -27,6 +31,8 @@ type
     pagosFaltantes : integer;
     monto : integer;
     intereses : Currency;
+    interesesMensuales : Currency;
+    total : Currency;
     pagarIntereses : boolean;
     currentDate : TDateTime;
     procedure FillTextBoxes;
@@ -148,6 +154,8 @@ begin
   begin
     monto := Round(cuentaCredito.deudaTotal / pagosFaltantes);
     intereses := cuentaCredito.getIntereses;
+    interesesMensuales := monto * 0.10;
+    total := interesesMensuales + monto;
   end
   else
   begin
@@ -161,6 +169,8 @@ begin
   txtNombre.Text := usuario.getNombreCompleto;
   txtDeuda.Text := CurrToStrF(cuentaCredito.deudaTotal, ffCurrency, 2);
   txtMonto.Text := Inttostr(monto);
+  txtIntereses.Text :=  CurrToStrF(interesesMensuales, ffCurrency, 2);
+  txtTotal.Text := CurrToStrF(total, ffCurrency, 2)
 end;
 
 procedure TFormCuentaCredito.btnAtrasClick(Sender: TObject);

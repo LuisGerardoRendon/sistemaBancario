@@ -17,13 +17,17 @@ type
     dsUsuarios: TDataSource;
     CuentacreditoTable: TFDQuery;
     CuentadebitoTable: TFDQuery;
-    updateSaldoCuenta: TFDTable;
+    CRUDCuentaDebito: TFDTable;
     createMovimiento: TFDTable;
     PagoTable: TFDQuery;
     createPago: TFDTable;
     CRUDCuentaCredito: TFDTable;
     CuentainteresesTable: TFDQuery;
     CRUDCuentaIntereses: TFDTable;
+    CRUDUsuario: TFDTable;
+    isClienteCreated: TFDQuery;
+    isCuentaCreditoCreated: TFDQuery;
+    isCuentaDebitoCreated: TFDQuery;
   private
     { Private declarations }
   public

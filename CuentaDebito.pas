@@ -78,7 +78,7 @@ end;
 
 procedure TFormCuentaDebito.updateSaldo;
 begin
-  with DataModuleDaniBD.updateSaldoCuenta do
+  with DataModuleDaniBD.CRUDCuentaDebito do
   begin
     Open;
     Refresh;
