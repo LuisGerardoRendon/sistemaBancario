@@ -11,6 +11,7 @@ object FormCuestionarCuentasDebito: TFormCuestionarCuentasDebito
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnClose = onClose
   OnShow = FormShow
   PixelsPerInch = 96
