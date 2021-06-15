@@ -11,6 +11,7 @@ object FormMenuCliente: TFormMenuCliente
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnClose = FormClose
   OnShow = cargarLabels
   PixelsPerInch = 96

@@ -13,7 +13,6 @@ type
     Label1: TLabel;
     Panel1: TPanel;
     Panel3: TPanel;
-    Panel4: TPanel;
     DBGrid1: TDBGrid;
     DBGrid2: TDBGrid;
     Label2: TLabel;
@@ -23,6 +22,8 @@ type
     Label4: TLabel;
     LabelNombreCliente: TLabel;
     ButtonCancelar: TButton;
+    Label5: TLabel;
+    LabelNumeroDeCuenta: TLabel;
 
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cargarDatos(Sender: TObject);
@@ -57,9 +58,20 @@ procedure TFormEstadoCuentaCredito.cargarDatos(Sender: TObject);
 begin
 
   usuarioCliente := PantallaPrincipal.FormPantallaPrincipal.usuario;
-  cuentaCredito := MenuCliente.FormMenuCliente.cuentaCredito;
+
+
+  if usuarioCliente.tipo = 0 then
+  begin
+       cuentaCredito := MenuCliente.FormMenuCliente.cuentaCredito;
+  end
+  else
+  begin
+      // Aqui se agigna la cuenta desde intereses y regacargos
+  end;
+
   LabelDeuda.Caption := CurrToStr(cuentaCredito.deudaTotal);
   LabelNombreCliente.Caption := usuarioCliente.getNombreCompleto;
+  LabelNumeroDeCuenta.Caption := cuentaCredito.numeroDeCuenta;
 
   with DataModuleAldoBD.PagoTable do
   begin
