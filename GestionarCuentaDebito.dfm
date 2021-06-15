@@ -31,7 +31,7 @@
     Caption = 'labelNumeroCuenta'
   end
   object Button3: TButton
-    Left = 8
+    Left = 42
     Top = 79
     Width = 154
     Height = 41
@@ -40,7 +40,7 @@
     OnClick = clicCerrarCuenta
   end
   object Button1: TButton
-    Left = 168
+    Left = 288
     Top = 79
     Width = 153
     Height = 42
@@ -48,22 +48,13 @@
     TabOrder = 1
     OnClick = clicCongelarCuenta
   end
-  object Button2: TButton
-    Left = 327
-    Top = 79
-    Width = 153
-    Height = 42
-    Caption = 'Ver estado de cuenta'
-    TabOrder = 2
-    OnClick = verEstadodeCuenta
-  end
   object Atrás: TButton
-    Left = 208
-    Top = 176
+    Left = 200
+    Top = 168
     Width = 75
     Height = 25
     Caption = 'Cancelar'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = clicCancelar
   end
 end

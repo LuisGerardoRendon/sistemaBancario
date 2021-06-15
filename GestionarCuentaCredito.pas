@@ -9,7 +9,6 @@ uses
 type
   TFormGestionarCuenta = class(TForm)
     Button1: TButton;
-    Button2: TButton;
     Button3: TButton;
     Label1: TLabel;
     labelNumeroCuenta: TLabel;

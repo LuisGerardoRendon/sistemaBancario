@@ -45,7 +45,7 @@
     Caption = 'labelDeudaTotal'
   end
   object Button1: TButton
-    Left = 168
+    Left = 291
     Top = 79
     Width = 153
     Height = 42
@@ -53,30 +53,22 @@
     TabOrder = 0
     OnClick = clicCongelar
   end
-  object Button2: TButton
-    Left = 327
-    Top = 79
-    Width = 153
-    Height = 42
-    Caption = 'Ver estado de cuenta'
-    TabOrder = 1
-  end
   object Button3: TButton
-    Left = 8
+    Left = 48
     Top = 79
     Width = 154
     Height = 41
     Caption = 'Cerrar cuenta'
-    TabOrder = 2
+    TabOrder = 1
     OnClick = cerrrarCuentaClic
   end
   object Atrás: TButton
     Left = 208
-    Top = 176
+    Top = 144
     Width = 75
     Height = 25
     Caption = 'Cancelar'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = clicAtras
   end
 end
