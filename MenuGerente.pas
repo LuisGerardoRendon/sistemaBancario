@@ -10,7 +10,7 @@ type
   TFormMenuGerente = class(TForm)
     LabelMenuGerente: TLabel;
     Button1: TButton;
-    Button2: TButton;
+    btnRegistrarCuenta: TButton;
     Button3: TButton;
     labelNombreGerente: TLabel;
     Button4: TButton;
@@ -21,7 +21,7 @@ type
     procedure clicRegistrarCuenta(Sender: TObject);
     procedure clicInteresesRecargos(Sender: TObject);
     procedure clicGestionarCuentasDebito(Sender: TObject);
-
+    procedure btnRegistrarCuentaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,9 +36,15 @@ var
 
 implementation
 
-uses PantallaPrincipal,GestionarCuentasDebito ,GestionarCuentasCredito, MenuInteresesRecargos, InformacionCliente;
+uses PantallaPrincipal,GestionarCuentasDebito, RegistrarCliente ,GestionarCuentasCredito, MenuInteresesRecargos, InformacionCliente;
 
 {$R *.dfm}
+
+procedure TFormMenuGerente.btnRegistrarCuentaClick(Sender: TObject);
+begin
+  FormRegistrarCliente.Show;
+  FormMenuGerente.Visible := False;
+end;
 
 procedure TFormMenuGerente.cargarLabel(Sender: TObject);
 begin
