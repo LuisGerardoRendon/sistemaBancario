@@ -34,7 +34,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   end
   object LabelEstadoDeCuenta: TLabel
     Left = 0
-    Top = 461
+    Top = 224
     Width = 1280
     Height = 21
     Align = alTop
@@ -46,6 +46,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    ExplicitTop = 461
     ExplicitWidth = 51
   end
   object Label2: TLabel
@@ -114,7 +115,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   end
   object LabelSaldo: TLabel
     Left = 0
-    Top = 399
+    Top = 162
     Width = 1280
     Height = 21
     Align = alTop
@@ -126,11 +127,12 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    ExplicitTop = 399
     ExplicitWidth = 40
   end
   object Panel1: TPanel
     Left = 0
-    Top = 121
+    Top = 245
     Width = 1280
     Height = 41
     Align = alTop
@@ -142,10 +144,12 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = 271
   end
   object Panel2: TPanel
     Left = 0
-    Top = 358
+    Top = 121
     Width = 1280
     Height = 41
     Align = alTop
@@ -157,13 +161,14 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    ExplicitTop = 358
   end
   object DBGrid1: TDBGrid
-    Left = 0
-    Top = 162
-    Width = 1280
+    Left = 216
+    Top = 284
+    Width = 785
     Height = 196
-    Align = alTop
+    Align = alCustom
     DataSource = DataModuleAldoBD.dsMovimientos
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -179,8 +184,8 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     TitleFont.Style = []
   end
   object ButtonRegresar: TButton
-    Left = 584
-    Top = 530
+    Left = 600
+    Top = 570
     Width = 121
     Height = 31
     Align = alCustom
@@ -190,7 +195,7 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
   end
   object Panel3: TPanel
     Left = 0
-    Top = 420
+    Top = 183
     Width = 1280
     Height = 41
     Align = alTop
@@ -202,5 +207,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 4
+    ExplicitTop = 420
   end
 end
