@@ -10,7 +10,6 @@ uses
 type
   TFormEstadoCuentaDebito = class(TForm)
     Label1: TLabel;
-    LabelSaldo: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     DBGrid1: TDBGrid;
@@ -18,6 +17,10 @@ type
     Label2: TLabel;
     LabelNombreCliente: TLabel;
     ButtonRegresar: TButton;
+    Label3: TLabel;
+    LabelNumeroCuenta: TLabel;
+    LabelSaldo: TLabel;
+    Panel3: TPanel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cargarDatos(Sender: TObject);
     procedure RegresarAMenuCliente();
@@ -28,6 +31,7 @@ type
     { Public declarations }
     cuentaDebito : TCuentaDebito;
     usuarioCliente : TUsuario;
+    usuarioGerente : TUsuario;
   end;
 
 var
@@ -47,10 +51,21 @@ procedure TFormEstadoCuentaDebito.cargarDatos(Sender: TObject);
 begin
 
   usuarioCliente := PantallaPrincipal.FormPantallaPrincipal.usuario;
-  cuentaDebito := MenuCliente.FormMenuCliente.cuentaDebito;
+
+  if usuarioCliente.tipo = 0 then
+  begin
+       cuentaDebito := MenuCliente.FormMenuCliente.cuentaDebito;
+  end
+  else
+  begin
+      // Aqui se agigna la cuenta desde intereses y regacargos
+  end;
+
+
   LabelSaldo.Caption := CurrToStr(cuentaDebito.saldo);
   LabelEstadoDeCuenta.Caption := cuentaDebito.estadoCuenta;
   LabelNombreCliente.Caption := usuarioCliente.getNombreCompleto;
+  LabelNumeroCuenta.Caption := cuentaDebito.numeroDeCuenta;
 
   with DataModuleAldoBd.MovimientoTable do
   begin
