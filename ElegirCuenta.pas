@@ -49,6 +49,8 @@ end;
 
 procedure TFormElegirCuenta.changeButtonVisibility;
 begin
+  btnVerCuentaDebito.Visible := true;
+  btnVerCuentaCredito.Visible := true;
   if not (cuentaDebito.estadoCuenta = 'activa') then
   begin
     btnVerCuentaDebito.Hide;

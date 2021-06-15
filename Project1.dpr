@@ -25,13 +25,16 @@ uses
   ElegirCuenta in 'ElegirCuenta.pas' {FormElegirCuenta},
   UnitCuentaDebito in 'UnitCuentaDebito.pas',
   UnitCuentaCredito in 'UnitCuentaCredito.pas',
-  GernerarRecargosIntereses in 'GernerarRecargosIntereses.pas' {FormGenerarRecargosI};
+  GernerarRecargosIntereses in 'GernerarRecargosIntereses.pas' {FormGenerarRecargosI},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Carbon');
   Application.CreateForm(TFormPantallaPrincipal, FormPantallaPrincipal);
   Application.CreateForm(TFormCuentaDebito, FormCuentaDebito);
   Application.CreateForm(TFormBuscarCliente, FormBuscarCliente);

@@ -68,12 +68,12 @@ begin
   begin
     cuentaDebito.saldo := cuentaDebito.saldo - monto;
     updateSaldo;
+    crearMovimiento('retiro');
   end
   Else
   begin
     showmessage('La cantidad que se desea retirar es mayor que el saldo');
   end;
-  crearMovimiento('retiro');
 end;
 
 procedure TFormCuentaDebito.updateSaldo;
