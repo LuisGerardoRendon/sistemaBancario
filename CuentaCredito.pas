@@ -82,7 +82,7 @@ begin
   begin
     if intereses > 0 then
     begin
-      txtMonto.Text := CurrToStrF((monto + intereses), ffCurrency, 2);
+      txtTotal.Text :=  CurrToStrF((total + intereses), ffCurrency, 2);
       pagarIntereses := true;
     end
     Else
@@ -94,7 +94,7 @@ begin
   end
   Else
   begin
-    txtMonto.Text := Inttostr(monto);
+    txtTotal.Text := CurrToStrF(total, ffCurrency, 2);
   end;
 end;
 

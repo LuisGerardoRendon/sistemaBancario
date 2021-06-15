@@ -56,9 +56,9 @@ object FormMenuInteresesRecargos: TFormMenuInteresesRecargos
     ParentFont = False
   end
   object DBGridCuentasActivas: TDBGrid
-    Left = 240
+    Left = 304
     Top = 144
-    Width = 809
+    Width = 635
     Height = 417
     DataSource = DataAccesModule_.dsInteresesRecargos
     Font.Charset = DEFAULT_CHARSET

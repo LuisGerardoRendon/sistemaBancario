@@ -143,10 +143,8 @@ object DataAccesModule_: TDataAccesModule_
       
         'SELECT numeroDeCuenta As N'#250'meroDeCuenta, deudaTotal As DeudaTota' +
         'l,'
-      
-        'totalInteresesAcumulados As MontoDeCuentaDeIntereses, recargos.r' +
-        'ecargos AS N'#250'meroDeRecargos'
-      'FROM cuentaCredito'
+      'totalInteresesAcumulados As MontoDeCuentaDeIntereses'
+      'FROM cuentaCredito '
       '         INNER JOIN cuentaIntereses'
       
         '                    ON cuentaCredito.id_cuenta_credito = cuentaI' +
@@ -157,7 +155,7 @@ object DataAccesModule_: TDataAccesModule_
       '                          FROM recargo) AS recargos'
       
         '                         ON id_cuenta_credito = recargos.idCuent' +
-        'aCredito ORDER BY DeudaTotal DESC;')
+        'aCredito  ORDER BY DeudaTotal DESC;')
     Left = 743
     Top = 408
   end
