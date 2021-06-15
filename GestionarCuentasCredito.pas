@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids, UnitCuentaCredito,
   Vcl.StdCtrls;
 
 type
@@ -23,6 +23,8 @@ type
     { Private declarations }
   public
   numeroDeCuenta:string;
+  deudaTotal: Currency;
+
     { Public declarations }
   end;
 
@@ -49,7 +51,7 @@ end;
 procedure TFormGestionarCuentasCredito.clicCuenta(Column: TColumn);
 begin
 numeroDeCuenta := DBGridCuentasCredito.Fields[0].AsString;
-
+deudaTotal := DBGridCuentasCredito.Fields[1].AsCurrency;
 FormGestionarCuentasCredito.Visible:= False;
 GestionarCuentaCredito.FormGestionarCuenta.Show;
 end;
@@ -66,6 +68,7 @@ end;
 procedure TFormGestionarCuentasCredito.onShow(Sender: TObject);
 begin
 DataAccesModule.DataAccesModule_.CuentaCreditoTable.Active:= True;
+DataAccesModule.DataAccesModule_.CuentaCreditoTable.Refresh;
 end;
 
 end.

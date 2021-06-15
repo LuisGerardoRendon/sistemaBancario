@@ -12,8 +12,11 @@ uses System.SysUtils, System.Variants,
     idClienteCuenta : integer;
     idCuentaCredito : integer;
     numeroDeCuenta : string;
-    procedure actualizarEstado(estado: string; numeroCuenta: string);
+    currentDate: TDateTime;
+    procedure actualizarEstado(estado: string);
     procedure obtenerId(numeroCuenta: string);
+    procedure registrarRecargo(monto: currency);
+    procedure sumarRecargoAcuenta(monto: currency);
     function getPagos : integer;
     function getIntereses : Currency;
 
@@ -28,9 +31,9 @@ implementation
 uses DataAccesModule, FireDAC.Stan.Param, DataModuleDani;
 { TCuentaCredito }
 
-procedure TCuentaCredito.actualizarEstado(estado: string; numeroCuenta:string);
+procedure TCuentaCredito.actualizarEstado(estado: string);
 begin
-  obtenerId(numeroCuenta);
+  obtenerId(numeroDeCuenta);
 with DataAccesModule.DataAccesModule_.updateCuentaCredito do
   begin
     Open;
@@ -49,7 +52,7 @@ begin
   with DataAccesModule_.getIdCuentaCreditoNumeroCuenta do
   begin
   Prepare;
-  ParamByName('numeroDeCuenta').AsString:= numeroDeCuenta;
+  ParamByName('numeroDeCuenta').AsString:= numeroCuenta;
   Open;
   Refresh;
   First;
@@ -57,6 +60,43 @@ begin
     begin
      idCuentaCredito := FieldByName('id_cuenta_credito').AsInteger;
      Next;
+    end;
+  end;
+end;
+
+
+//REGISTRAR RECARO
+procedure TCuentaCredito.registrarRecargo(monto: Currency);
+begin
+
+currentDate := Now;
+with DataAccesModule_.crearRecargo do
+  begin
+    Open;
+    Refresh;
+    Insert;
+    FieldByName('fecha').AsDateTime := currentDate;
+    FieldByName('monto').AsCurrency := monto;
+    FieldByName('idCuentaCredito').AsInteger := cuentaCredito.idCuentaCredito;
+    Post;
+  end;
+  //sumarRecargoAcuenta(monto);
+end;
+
+// SUMAR RECARGO A CUENTA
+procedure TCuentaCredito.sumarRecargoAcuenta(monto: currency);
+begin
+with DataAccesModule.DataAccesModule_.updateCuentaCredito do
+  begin
+    Open;
+    Refresh;
+    if FindKey([idCuentaCredito]) then
+    begin
+      Edit;
+      deudaTotal := FieldByName('deudaTotal').AsCurrency;
+      deudaTotal := deudaTotal + monto;
+      FieldByName('deudaTotal').AsCurrency := deudaTotal;
+      Post;
     end;
   end;
 end;
