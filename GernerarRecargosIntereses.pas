@@ -126,16 +126,25 @@ cuentaCredito := TCuentaCredito.Create;
 cuentaCredito.obtenerId(numeroDeCuenta);
 pagosRealizados := cuentaCredito.getPagos;
 LabelNumeroDePagos.Caption := inttostr(pagosRealizados);
+if pagosRealizados < 12 then
+begin
 pagosFaltantes := 12 - pagosRealizados;
 pagoMensual := deudaTotal / pagosFaltantes;
 porcengeRecargo := 0.05;
 porcentageInteres := 0.10;
 montoRecargo := pagoMensual * porcengeRecargo;
 montoInteres := pagoMensual * porcentageInteres;
+end
+else
+begin
+pagosFaltantes :=0;
+pagoMensual := 0;
+montoRecargo := 0;
+montoInteres := 0;
+end;
 LabelMontoDelRecargo.Caption := CurrToStrF(montoRecargo, ffCurrency, 2);
 LabelMontoDelInteres.Caption := CurrToStrF(montoInteres, ffCurrency, 2);
 totalIntereses := MenuInteresesRecargos.FormMenuInteresesRecargos.totalIntereses;
-
 
 end;
 

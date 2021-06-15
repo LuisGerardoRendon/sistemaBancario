@@ -11,6 +11,7 @@ object FormGenerarRecargosI: TFormGenerarRecargosI
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnClose = onClose
   OnShow = onShow
   PixelsPerInch = 96

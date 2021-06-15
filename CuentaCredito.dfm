@@ -44,6 +44,20 @@ object FormCuentaCredito: TFormCuentaCredito
     Height = 13
     Caption = 'Monto de la mensualidad'
   end
+  object Label5: TLabel
+    Left = 98
+    Top = 116
+    Width = 46
+    Height = 13
+    Caption = 'Intereses'
+  end
+  object Label6: TLabel
+    Left = 120
+    Top = 143
+    Width = 24
+    Height = 13
+    Caption = 'Total'
+  end
   object txtDeuda: TEdit
     Left = 160
     Top = 59
@@ -79,7 +93,7 @@ object FormCuentaCredito: TFormCuentaCredito
   end
   object cbPagarIntereses: TCheckBox
     Left = 232
-    Top = 113
+    Top = 167
     Width = 97
     Height = 17
     Caption = 'Pagar intereses'
@@ -94,5 +108,19 @@ object FormCuentaCredito: TFormCuentaCredito
     Caption = 'Atras'
     TabOrder = 5
     OnClick = btnAtrasClick
+  end
+  object txtIntereses: TEdit
+    Left = 160
+    Top = 113
+    Width = 169
+    Height = 21
+    TabOrder = 6
+  end
+  object txtTotal: TEdit
+    Left = 160
+    Top = 140
+    Width = 169
+    Height = 21
+    TabOrder = 7
   end
 end

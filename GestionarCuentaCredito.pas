@@ -21,6 +21,7 @@ type
     procedure onShow(Sender: TObject);
     procedure cerrrarCuentaClic(Sender: TObject);
     procedure clicCongelar(Sender: TObject);
+    procedure atras();
   private
     { Private declarations }
   public
@@ -38,25 +39,31 @@ uses MenuGerente, GestionarCuentasCredito;
 
 {$R *.dfm}
 
+procedure TFormGestionarCuenta.atras;
+begin
+  FormGestionarCuenta.Visible:= False;
+  FormMenuGerente.Show;
+end;
+
 procedure TFormGestionarCuenta.cerrrarCuentaClic(Sender: TObject);
 begin
 //Cerrar cuenta
 
 cuentaCredito.actualizarEstado('cerrada');
-showmessage(cuentaCredito.numeroDeCuenta);
+showmessage('La cuenta ha sido cerrada exitosamente');
+atras;
 end;
 
 procedure TFormGestionarCuenta.clicAtras(Sender: TObject);
 begin
-FormGestionarCuenta.Visible:= False;
-FormMenuGerente.Show;
+atras;
 end;
 
 procedure TFormGestionarCuenta.clicCongelar(Sender: TObject);
 begin
 cuentaCredito.actualizarEstado('congelada');
-showmessage(inttostr(cuentaCredito.idCuentaCredito));
-showmessage(cuentaCredito.numeroDeCuenta);
+showmessage('La cuenta ha sido congelada exitosamente');
+atras;
 end;
 
 procedure TFormGestionarCuenta.onClose(Sender: TObject;

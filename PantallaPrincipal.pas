@@ -43,7 +43,7 @@ var
 implementation
 {$R *.dfm}
 
-uses DataAccesModule, MenuCliente, MenuGerente, BuscarCliente;
+uses DataAccesModule, MenuCliente, MenuGerente, BuscarCliente, System.Hash;
 
 procedure TFormPantallaPrincipal.loginClick(Sender: TObject);
 begin
@@ -51,7 +51,7 @@ begin
   begin
     Prepare;
     ParamByName('correoElectronico').AsString:= txtCorreoElectronico.Text;
-    ParamByName('contrasenia').AsString:= txtContrasenia.Text;
+    ParamByName('contrasenia').AsString:= THashMD5.GetHashString(txtContrasenia.Text);
     Open;
     Refresh;
     First;
