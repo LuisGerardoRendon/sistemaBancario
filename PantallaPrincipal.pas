@@ -67,7 +67,6 @@ begin
          tipo := FieldByName('tipo').AsInteger;
          Next;
     end;
-    txtCorreoElectronico.Text:= nombre;
     if not (Length(nombre)= 0) then
     begin
       usuario := TUsuario.Create;
