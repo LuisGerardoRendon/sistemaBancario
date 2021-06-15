@@ -46,7 +46,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 454
     ExplicitWidth = 51
   end
   object Label2: TLabel
@@ -63,7 +62,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 18
     ExplicitWidth = 75
   end
   object LabelNombreCliente: TLabel
@@ -80,7 +78,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 42
     ExplicitWidth = 70
   end
   object Label3: TLabel
@@ -97,7 +94,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 66
     ExplicitWidth = 171
   end
   object LabelNumeroCuenta: TLabel
@@ -114,7 +110,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 90
     ExplicitWidth = 131
   end
   object LabelSaldo: TLabel
@@ -131,7 +126,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 392
     ExplicitWidth = 40
   end
   object Panel1: TPanel
@@ -148,7 +142,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitTop = 120
   end
   object Panel2: TPanel
     Left = 0
@@ -164,7 +157,6 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    ExplicitTop = 345
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -173,6 +165,12 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Height = 196
     Align = alTop
     DataSource = DataModuleAldoBD.dsMovimientos
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -204,6 +202,5 @@ object FormEstadoCuentaDebito: TFormEstadoCuentaDebito
     Font.Style = []
     ParentFont = False
     TabOrder = 4
-    ExplicitTop = 407
   end
 end

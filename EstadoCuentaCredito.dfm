@@ -102,6 +102,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    ExplicitWidth = 69
   end
   object LabelNombreCliente: TLabel
     Left = 0
@@ -117,7 +118,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 54
+    ExplicitWidth = 54
   end
   object Label5: TLabel
     Left = 0
@@ -133,7 +134,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitTop = 77
+    ExplicitWidth = 164
   end
   object LabelNumeroDeCuenta: TLabel
     Left = 0
@@ -149,8 +150,6 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitLeft = 600
-    ExplicitTop = 100
     ExplicitWidth = 124
   end
   object Panel1: TPanel
@@ -171,8 +170,6 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitTop = 55
-    ExplicitHeight = 379
   end
   object Panel3: TPanel
     Left = 1214
@@ -192,9 +189,6 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-    ExplicitLeft = 696
-    ExplicitTop = 55
-    ExplicitHeight = 379
   end
   object DBGrid1: TDBGrid
     Left = 57
@@ -203,6 +197,12 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     Height = 603
     Align = alLeft
     DataSource = DataModuleAldoBD.dspagos
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -219,7 +219,7 @@ object FormEstadoCuentaCredito: TFormEstadoCuentaCredito
     DataSource = DataModuleAldoBD.dsRecargos
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
-    Font.Height = -12
+    Font.Height = -19
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
